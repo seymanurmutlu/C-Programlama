@@ -1,0 +1,45 @@
+//  Created by Seymanur Mutlu on 17.03.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+/*klavyeden sıfır girilene kadar sporcuların kilolarını okuyarak aşağıdaki işlemleri gerçekleştiren
+ bir c programı yazın.
+ klavyeden negatif deger girildiginde tekrar deger girilmesi istenmektedir.Kaç adet
+ sporcu kilosunu girdigini, sporcuların tamamının kilo ortalamasını,her siklette kaç adet sporcu old.
+ yadırılmalı. kilo<50 hafif siklet / 50<=kilo<=70 orta siklet / 70 üzeri ağır siklet */
+#include <stdio.h>
+
+int main(int argc, const char * argv[]) {
+    int kilo;
+    int asay=0,osay=0,hsay=0,toplam=0;
+    float ort;
+     do{
+        printf("kilo girin: ");
+        scanf("%d",&kilo);
+         
+         if(kilo>0 && kilo<50){//Eger 0-50 kilo arasındaysa hafif siklet say. arttir.
+             hsay++;
+             toplam=toplam+kilo;//onceki toplama şimdi alınan kiloyu ekle.
+         }
+         else if(kilo>=50 && kilo<70){//Eger 50-70 kilo arasindaysa orta siklet say. arttir.
+             osay++;
+             toplam=toplam+kilo;//onceki toplama şimdi alınan kiloyu ekle.
+         }
+         else if(kilo>=70){//Eger 70 kilodan fazlaysa agir siklet say. arttir.
+             asay++;
+             toplam=toplam+kilo;//onceki toplama şimdi alınan kiloyu ekle.
+         }
+         else if(kilo<0)
+             printf("Yanlis deger girdiniz.Tekrar giriniz!");//negatif degerli kilo olamayacagi icin hata verir.
+         
+         else
+             break;//kilo=0 girilirse de döngüden cikar.
+         
+     }while (kilo!=0);
+    
+    ort=(float)((toplam)/(hsay+osay+asay));//ortalama=toplam kilo/bütün sikletlerdeki kisi sayisi
+    
+    printf("Toplam %d adet sporcu girilmistir.\n%d hafif, %d orta, %d agir siklet vardır.\n",(asay+osay+hsay),hsay,osay,asay);
+    printf("Genel ortalama %.2f dir.",ort);
+    
+    return 0;
+}

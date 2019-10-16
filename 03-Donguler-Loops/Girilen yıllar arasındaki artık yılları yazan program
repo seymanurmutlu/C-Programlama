@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+// girilen yillar arasindaki artik yillari bulur.
+int main()
+{
+    int yil1,yil2,i,yil,sayi=0;
+    printf("Baslangic yilini giriniz: ");
+    scanf("%d",&yil1);
+
+    printf("Bitis yilini giriniz: ");
+    scanf("%d",&yil2);
+
+    for(i=yil1;i<=yil2;i++){
+        yil=i;
+
+        if(yil%4==0){
+            printf("%d  ",i);
+            sayi++;
+        }
+    }
+    printf("(%d tane)",sayi);
+
+    return 0;
+}

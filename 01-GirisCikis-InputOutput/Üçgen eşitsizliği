@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+ /*Bir üçgende, iki kenarin toplam uzunlugu, üçüncü kenardan az olamaz.
+  Ayrica iki kenarin birbirinden farkinin mutlak degeri, üçüncü
+  kenardan büyük olmamalidir. Bu bilgileri kullanarak, verilen üç
+  kenar uzunluguna göre bir üçgen çizilip çizilmeyecegini gösteren
+  programi yaziniz. Girilecek kenar uzunluklari tam sayi olacaktir.*/
+int main()
+{
+    int k1,k2,k3;
+
+    printf("birinci kenari giriniz = ");
+    scanf("%d",&k1);
+
+    printf("ikinci kenari giriniz = ");
+    scanf("%d",&k2);
+
+    printf("ucuncu kenari giriniz = ");
+    scanf("%d",&k3);
+
+    if(k1!=0 && k2!=0 && k3!=0) {
+        abs(k1-k2)<k3<k1+k2;
+        abs(k1-k3)<k2<k1+k3;
+        abs(k2-k3)<k1<k2+k3;
+        printf("Ucgen cizilebilir.");
+    }
+    else printf("Ucgen cizilemez.");
+    return 0;
+}

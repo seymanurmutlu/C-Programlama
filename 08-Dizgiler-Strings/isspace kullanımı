@@ -1,0 +1,21 @@
+//  Created by Seymanur Mutlu on 14.03.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, const char * argv[]) {
+    
+    char kelime[225];
+    int i,sayac=0;
+    printf("Kelimeyi girin: ");
+    fgets(kelime, 225, stdin);
+    for(i=0;kelime[i]!='\0';i++){
+        if(isspace(kelime[i]))
+            sayac++;
+    }
+    printf("Girdiginiz cumle %d kelimeden olusmustur.",sayac);
+    
+    return 0;
+}

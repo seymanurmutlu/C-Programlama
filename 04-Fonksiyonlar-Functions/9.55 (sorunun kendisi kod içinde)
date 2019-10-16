@@ -1,0 +1,47 @@
+//  Created by Seymanur Mutlu on 13.04.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+/*Kendisine gonderilen saat ve dakika degerlerine gore analog saatin akrep(kisa olan) ve yelkovan(uzun olan)
+ arasindaki kuzuk aciyi ureten kucukAci adinda bir fonk yaziniz(acilar esitse herhangi birine dondurebilir).
+ NOT:Her bir dakikada yelkovan 6 derece ilerler
+     Her bir dakikada akrep 0.5 derece ilerler.
+ */
+
+#include <stdio.h>
+
+int kucukAci(int saat,int dakika){
+    float saataci,dakikaaci; //saatin ve dakikanin acisi icin kullanacagimiz degiskenleri tanimladik.
+    float aci1,aci2; //aradaki aci ve bu acinin 360tan cikartilmisi icin degisken tanimladik.
+    
+    saataci=saat*60*0.5; //saatin acisi
+    dakikaaci=dakika*6; //dakikanin acisi
+    
+    if (saataci>dakikaaci) //negatif deger cikmamasi icin acilara gore islem yapiyoruz.
+        aci1=saataci-dakikaaci;
+    else if (saataci<dakikaaci)
+        aci1=dakikaaci-saataci;
+    else //acilar esitse sifir donduruyoruz.
+        aci1=0;
+    
+    aci2=360-aci1;
+    
+    if(aci1>aci2)
+        return aci2;
+    else if(aci2>aci1)
+        return aci1;
+    else
+        return aci1;
+    
+}
+int main(int argc, const char * argv[]) {
+    
+    float c;
+    
+    c=kucukAci(3,0); //(saat,dakika)
+    //Burada istege gore saat ve dakikada oynama yapilabilir.
+    //isterseniz klavyeden de deger isteyebilirsiniz.
+    
+    printf("\n%.4f\n",c);
+    
+    return 0;
+}

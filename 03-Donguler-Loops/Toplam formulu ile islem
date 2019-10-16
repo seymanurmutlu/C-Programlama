@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+//1'den n'ye kadar olan sayilarin (n+1)/n toplami
+int main()
+{
+    int n,i=1;
+    float toplam=0;
+
+    printf("1'den n'ye kadar olan sayilarin (n+1)/n toplamini verir.\n");
+    printf("n sayisini girin: ");
+    scanf("%d",&n);
+
+    while(i<=n){
+        toplam=toplam+((i+1)/i);
+        i++;
+        }
+
+    printf("\n\nToplam = %.2f\n\n",toplam);
+
+    return 0;
+}

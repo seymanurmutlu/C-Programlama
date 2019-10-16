@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int kenar;
+    int cevre;
+    int alan;
+
+    printf("Karenin kenarini giriniz = \n");
+    scanf("%d",&kenar);
+
+    cevre=4*kenar;
+    alan=kenar*kenar;
+
+    printf("Karenin cevresi %d olarak hesaplanmistir.\n",cevre);
+    printf("Karenin alani %d olarak hesaplanmistir.\n",alan);
+    return 0;
+}

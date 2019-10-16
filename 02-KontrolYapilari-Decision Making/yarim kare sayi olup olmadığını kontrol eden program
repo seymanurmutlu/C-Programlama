@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int sayi;
+    printf("Dort basamakli bir sayi giriniz: ");
+    scanf("%d",&sayi);
+    printf("-------------------------------------\n");
+    int birler=sayi%10;
+    int onlar=(sayi%100-birler)/10;
+    int yuzler=(sayi%1000-10*onlar)/100;
+    int binler=sayi/1000;
+
+    int ilkyari=binler*10+yuzler;
+    int sonyari=onlar*10+birler;
+
+    if((ilkyari+sonyari)*(ilkyari+sonyari)==sayi)
+        printf("Girilen sayi bir yarim kare sayidir.");
+    else printf("Girilen sayi bir yarimkare sayi degildir.");
+
+    return 0;
+}

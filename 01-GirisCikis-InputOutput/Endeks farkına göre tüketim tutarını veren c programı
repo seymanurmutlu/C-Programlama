@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int ilkendeks,sonendeks;
+
+    printf("ilk endeksi giriniz: ");
+    scanf("%d",&ilkendeks);
+
+    printf("\nson endeksi giriniz: ");
+    scanf("%d",&sonendeks);
+
+    int tuketimMik=sonendeks-ilkendeks;
+    float tuketimTut=tuketimMik*0.159838;
+    float kdv=(tuketimTut/100)*22;
+
+    printf("\nTuketim miktari(son endeks-ilk endeks)=%d",tuketimMik);
+    printf("\nTuketim tutari=%.2f",tuketimTut);
+    printf("\nKDV(%22)=%.2f",kdv);
+
+    return 0;
+}

@@ -1,0 +1,36 @@
+//  13.06
+//
+//  Created by Seymanur Mutlu on 17.04.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+/*Klavyeden girilen en fazla 100 karakterlik bir dizginin icindeki kelimelerin bas harflerini buyuk yazdiran program yaziniz.*/
+/*Algoritmayi soyle dusundum:
+ Butun dizgiyi kucuk harfe cevir sonrasinda tekrardan butun dizgiyi gez, bosluk gorunce bir sonraki elemani
+ buyuk harfe cevir.*/
+//ORNEK CUMLE: Bil1102 dErsini seViyoRum.
+#include <stdio.h>
+#include <ctype.h>
+
+int main(int argc, const char * argv[]) {
+    int i;
+    char s[100];
+    printf("Dizgi giriniz: ");
+    fgets(s, 100, stdin);
+    
+    for (i=0;s[i] != '\0' ;i++ ) { //her karakteri kucuk harfe ceviriyorum.
+        if(isalpha(s[i])){ //harf ise
+            if(isupper(s[i])) //ve buyuk harf ise
+                s[i]=tolower(s[i]); //kucuk harfe cevir.
+                }
+    }
+    
+    for (i=0; s[i] != '\0'; i++) { //butun dizgiyi gezmeye basliyorum.
+        if(isspace(s[i])) //bosluk gordugum yerde
+            s[i+1]=toupper(s[i+1]); //bir sonraki karakteri buyuk harfe ceviriyorum.
+    }
+    s[0]=toupper(s[0]); //ilk karakterden once bosluk olmadigi icin ilk karakteri buyuk harfe ceviriyorum.
+    
+    printf("%s",s);
+    
+    return 0;
+}

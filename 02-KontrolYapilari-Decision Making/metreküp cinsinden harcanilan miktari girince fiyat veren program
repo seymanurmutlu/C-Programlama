@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+/*metrekup cinsinden girilen tukelilmis su miktarını fiyatlandırır.
+ü harfi üs olarak 3 (küp)'ü verdigi icin kodda mü yazıyor.Compile edince
+düzgün gözüküyor.*/
+
+int main(){
+    
+    int sutuketim,toplam;
+
+    printf("Su tuketim miktarini giriniz(mü cinsinden)= ");
+    scanf("%d",&sutuketim);
+
+    if(sutuketim>0 && sutuketim<=50){
+        toplam=sutuketim*15;
+        printf("Not: Su tuketim bedeliniz 15tl uzerinden hesaplanacaktir. \nSu tuketim bedeli= %d",toplam);
+    }
+
+    else if (sutuketim>50 && sutuketim<100) {
+        toplam=sutuketim*25;
+        printf("Not: Su tuketim bedeliniz 25tl uzerinden hesaplanacaktir. \nSu tuketim bedeli = %d",toplam);
+    }
+
+    else if (sutuketim>=100){
+        toplam=sutuketim*35;
+        printf("Not: Su tuketim bedeli 35tl uzerinden hesaplanacaktir. \nSu tuketim bedeli = %d",toplam);
+    }
+
+    return 0;
+    }

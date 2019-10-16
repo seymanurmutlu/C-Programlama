@@ -1,0 +1,31 @@
+//  Created by Seymanur Mutlu on 13.04.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+/* Kendisine gonderilen iki noktanin koordinatlarina gore aralarindaki mesafeyi geri donduren
+ uzaklik adindaki fonksiyonu main() fonksiyonu ile beraber yaziniz. main() fonk icerisinden ornek degerlere gore
+ cagiriniz.
+ Formul: mesafe*mesafe=(x1-x2)*(x1-x2)+(y1-y2)*(y1-y2)
+ karekok isaretini klavyeden cikartamadigim icin burada boyle yazdim asagida sqrt fonksiyonunu kullanicam
+ */
+
+#include <stdio.h>
+#include <math.h>
+int mesafeFonk(float x1, float y1, float x2, float y2){
+    float mesafe; //float sayilarla islem yaptigimiz icin ve mesafe de float bir sayi olabilecegi icin float tanimladik.
+    mesafe=sqrtf(((x1-x2)*(x1-x2))+((y1-y2)*(y1-y2))); //islemi sqrtf fonksiyonunu kullanarak yaptik.
+    //printf("%f\n",mesafe); kontrol amacli olusturdum.
+    return mesafe;
+}
+
+int main(int argc, const char * argv[]) {
+    float x1,y1,x2,y2; //birinci ve ikinci noktanin koordinatlari icin degisken tanimliyoruz.
+    
+    printf("birinci noktanin koordinatarini girin: ");
+    scanf("%f%f",&x1,&y1);
+    printf("ikinci noktanin koordinatlarini girin: ");
+    scanf("%f%f",&x2,&y2);
+    float uzaklik = mesafeFonk(x1, y1, x2, y2); //alinan noktalari fonksiyona yolladik.
+    printf("Aradaki mesafe= %.3f\n",uzaklik);
+    
+    return 0;
+}

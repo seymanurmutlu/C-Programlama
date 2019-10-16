@@ -1,0 +1,26 @@
+//  main.c
+//  13.16
+//
+//  Created by Seymanur Mutlu on 17.04.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+/*Klavyeden girilen 10 adet isim icerisinde "Me" ile başlayanlari ekrana yazan programi kodlayiniz.*/
+#include <stdio.h>
+#include <stdlib.h>
+int main(int argc, const char * argv[]) {
+    char isimler[10][10]; //isimleri çift boyutlu diziler gibi aliyoruz.
+    int i;
+    char s[]="Me"; //karsilastirma yapmak icin.
+    
+    printf("isimleri giriniz\n");
+    for (i=0; i<10; i++) {
+        fgets(isimler[i], 10, stdin);
+    }
+    
+    for (i=0; i<10; i++) {
+        if(strncmp(isimler[i],s , 2)==0) //strncmp ile karsilatrirma yaptim esitse 0 dondurdugu icin
+            printf("%s",isimler[i]); //0 donenleri ekrana yazdirdim.
+    }
+    
+    return 0;
+}

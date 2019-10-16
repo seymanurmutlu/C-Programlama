@@ -1,0 +1,17 @@
+//  Created by Seymanur Mutlu on 11.03.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+
+#include <stdio.h>
+#include <stdlib.h>
+int main(int argc, const char * argv[]) {
+    int sonuc;
+    sonuc=strcmp("telefon","tablet");
+    if(sonuc==0)
+        printf("telefon ve tablet esit.\n");
+    else if(sonuc<0)
+        printf("alfabetik olarak telefon<tablet\n");
+    else
+        printf("alfabetik olarak telefon>tablet\n");
+    return 0;
+}

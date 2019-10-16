@@ -1,0 +1,39 @@
+//  Created by Seymanur Mutlu on 6.03.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+
+#include <stdio.h>
+int karakterSay(const char *s){
+    int i;
+    for(i=0;s[i]!='\0';i++);//bitis karakterini gorunce dur.
+    return i;
+}
+
+
+void cumleEkle(char *bastaki, const char *sondaki){
+    int basN=karakterSay(bastaki)-1;
+    int sonN=karakterSay(sondaki)-1;
+    
+    int i;
+    
+    for(i=0;i<sonN;i++)
+        bastaki[i+basN]=sondaki[i];
+    bastaki[basN+sonN+1]='\0';/* Bastaki stringi arttırıyor ve toplamın sonuna bitis karakteri koyuyor.*/
+    
+}
+
+int main(int argc, const char * argv[]) {
+    
+    char cumle1[100];
+    char cumle2[50];
+    
+    printf("ilk cumleyi gir: ");
+    fgets(cumle1,50,stdin);
+    
+    printf("\neklenecek cumleyi gir: ");
+    fgets(cumle2, 50, stdin);
+    
+    cumleEkle(cumle1,cumle2);
+    puts(cumle1);
+    return 0;
+}

@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int sayi;
+
+    printf("Sayiyi giriniz(En fazla uc basamakli): ");
+    scanf("%d",&sayi);
+
+    int birler=sayi%10;
+    int onlar=(sayi/10)%10;
+    int yuzler=sayi/100;
+
+    if(birler>onlar && birler>yuzler && onlar>yuzler){
+        printf("%d > %d > %d\n",birler,onlar,yuzler);
+        printf("Bu sayidan elde edilebilecek en buyuk sayi:%d%d%d",birler,onlar,yuzler);
+    }
+    else if(birler>onlar && birler>yuzler && yuzler>onlar){
+        printf("%d > %d > %d\n",birler,yuzler,onlar);
+        printf("Bu sayidan elde edilebilecek en buyuk sayi:%%d%d%d",birler,yuzler,onlar);
+    }
+    else if(onlar>birler && onlar>yuzler && birler>yuzler){
+        printf("%d > %d > %d\n",onlar,birler,yuzler);
+        printf("Bu sayidan elde edilebilecek en buyuk sayi:%%d%d%d",onlar,birler,yuzler);
+    }
+    else if(onlar>birler && onlar>yuzler && yuzler>birler){
+        printf("%d > %d > %d\n",onlar,yuzler,birler);
+        printf("Bu sayidan elde edilebilecek en buyuk sayi:%%d%d%d",onlar,yuzler,birler);
+        }
+
+    else if(yuzler>birler && yuzler>onlar && birler>onlar){
+        printf("%d > %d > %d\n",yuzler,birler,onlar);
+        printf("Bu sayidan elde edilebilecek en buyuk sayi:%%d%d%d",yuzler,birler,onlar);
+        }
+
+    else if(yuzler>birler && yuzler>onlar && onlar>birler){
+        printf("%d > %d > %d\n",yuzler,onlar,birler);
+        printf("Bu sayidan elde edilebilecek en buyuk sayi:%%d%d%d",yuzler,onlar,birler);
+        }
+
+
+    return 0;
+}

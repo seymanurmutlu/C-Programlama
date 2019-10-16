@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <stdlib.h>
+/*klavyeden girilen iki ayri kesirli ifadenin pay ve paydasi
+veriliyor.Bu kesirli ifadelerin toplaminda ve carpiminda
+olusan kesirli ifadeyi ve bu ifadenin sonucunu ekrana yazdiran
+programi yapiniz.
+
+ORNEK:
+birinci ifadenin payinin ve paydasini giriniz: 4 5
+ikinci ifadenin payini ve paydasini giriniz: 5 6
+
+    4     5    24
+  -----x-----=-----=0.67
+    5     6    35
+
+    4     5    24
+  -----+-----=-----=1.63
+    5     6    35
+
+*/
+int main()
+{
+    int pay1,payda1;
+    int pay2,payda2;
+    float sonuccarp,sonuctop;
+
+    printf("Birinci ifadenin payini ve paydasini giriniz: ");
+    scanf("%d %d",&pay1,&payda1);
+
+    printf("Ikinci ifadenin payini ve paydasini giriniz: ");
+    scanf("%d %d",&pay2,&payda2);
+
+    sonuccarp=(float)(pay1*pay2)/(payda1*payda2);
+    printf("  %d     %d    %d\n",pay1,pay2,pay1*pay2);
+    printf("-----x-----=-----=%.2f\n",sonuccarp);
+    printf("  %d     %d    %d\n",payda1,payda2,payda1*payda2);
+
+    sonuctop=(float)((pay1*payda2)+(pay2*payda1))/(payda1*payda2);
+    printf("  %d     %d    %d\n",pay1,pay2,(pay1*payda2)+(pay2*payda1));
+    printf("-----+-----=-----=%.2f\n",sonuctop);
+    printf("  %d     %d    %d\n",payda1,payda2,payda1*payda2);
+
+    return 0;
+}

@@ -1,0 +1,33 @@
+//  Created by Seymanur Mutlu on 17.04.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+// y=mx+n (y=13x+4)olarak girdiginiz denklemde x yerine yazilacak degeri alip sonucu (y) verir.
+
+#include <stdio.h>
+#include <stdlib.h>
+int main(int argc, const char * argv[]) {
+    char denklem[20];
+    
+    printf("dogrunun denklemini girin\n");
+    scanf("%s",denklem);
+    
+    double m,n;
+    char *mptr; //m'i atacagimiz pointer
+    char *nptr; //n'i atacagimiz pointer
+    int temsiliX,sonuc=0;
+    
+    m=strtod(denklem+2,&mptr); //m i ayirdik.
+    printf("%.lf\n",m);
+    
+    n=strtod(mptr+2, &nptr); //n i ayirdik
+    printf("%.lf\n",n);
+    
+    printf("x degerini giriniz = "); //x yerine yazilmak istenen sayiyi aldik.
+    scanf("%d",&temsiliX);
+    
+    sonuc=m*temsiliX+n; //degiskenler icinde sonucu hesapladik.
+    
+    printf("\nsonuc = y = %d \n",sonuc);
+    
+    
+    return 0;
+}

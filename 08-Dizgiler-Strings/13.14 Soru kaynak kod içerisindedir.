@@ -1,0 +1,41 @@
+//  Created by Seymanur Mutlu on 18.04.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+/*Klavyeden (.) girilinceye kadar, girilen cumleyi şifreleyerek ekrana yazan programi kodlayiniz.
+ Sifreleme esasi olarak da en eski sifreleme metodlarindan birisi olan "her harfin belli bir miktar otelenmesi"
+ esas alinmistir. Buna gore ; oteleme miktari(klavyeden giriliyor) 3 secildiginde 3 ilerideki harf ile degistirilecektir.Yani tum A'lar D ile, tum K'lar da N harfi ile ifade edilir.Otelendiginde son harfi
+ gecen harfler bassa dondurulerek ordan devam ettirilir.(girilecek metin icinde turkce karakter ve harf olmadigi
+ varsayilir.)*/
+#include <stdio.h>
+
+int main(int argc, const char * argv[]) {
+    char str[100]; //alinacak stringin degiskeni
+    int oteleme; //oteleme miktarinin degiskeni
+    int i;
+    
+    printf("Sifrelenecek metni girin\n");
+    fgets(str, 100, stdin);
+    
+    printf("oteleme miktarini girin = ");
+    scanf("%d",&oteleme);
+    
+    for(i=0;str[i] != '.'; i++){ //stringin her karakterini tek tek dolas '.' gorunce sonlandir.
+        if (str[i]=='x' || str[i]=='X')
+            printf("a"); // x veya X ise yerine basa donerek a yaz.
+        
+        else if (str[i]=='y' || str[i]=='Y')
+            printf("b");// y veya Y ise yerine basa donerek b yaz.
+        
+        else if (str[i]=='z' || str[i]=='Z')
+            printf("c");// z veya Z ise yerine basa donerek c yaz.
+        
+        else if (str[i]==' ')
+            printf(" ");
+        
+        else
+        printf("%c",str[i]+oteleme); //diger karakterlerde oteleme mik. kadar ileri git.
+        
+    }
+    printf("\n");
+    return 0;
+}

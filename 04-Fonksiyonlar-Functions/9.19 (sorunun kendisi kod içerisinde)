@@ -1,0 +1,135 @@
+//  Created by Seymanur Mutlu on 9.04.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+/*Kendisine gonderilen basamak sayisi ve islem tipi (toplama icin + cıkartma icin -) bilgisine gore
+ ilkokul 4.sinif ogrencileri icin rastgele bir islem sorusu ekrana yazan islemYaz adindaki
+ fonksiyonu yaziniz.(cikarma isleminde ogrenciler 4.sinif old. icin daima çıkan deger eksilen degerden kucuk
+ olmalidir.Basamak sayisi da en cok 3 olabilir.)
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+void islemYaz(char tip,int basSay){
+    int sayi0,sayi1,sonuc;
+    srand(time(NULL));
+    
+    if(tip=='+'){ //toplama ise
+        if(basSay==1){ // 1 basamakli isteniyor ise
+            sayi0=rand()%10; //sayilara 0 ile 10 arasinda rastgele deger ata
+            sayi1=rand()%10;
+            sonuc=sayi0+sayi1; //sayilari topla.
+        }
+        if(basSay==2){ // 2 basamakli isteniyor ise
+            sayi0=10+rand()%90; //sayilara 10 ile 99 arasinda rastgele deger ata
+            sayi1=10+rand()%90;
+            sonuc=sayi0+sayi1; //sayilari topla.
+        }
+        if(basSay==3){ // 3 basamakli isteniyor ise
+            sayi0=100+rand()%900; //sayilara 100 ile 999 arasinda rastgele deger ata
+            sayi1=100+rand()%900;
+            sonuc=sayi0+sayi1; //sayilari topla.
+        }
+        printf("  %d\n",sayi0);
+        printf("  %d\n",sayi1);
+        printf("+\n");
+        printf("------\n");
+        printf("%d",sonuc);
+        
+    }
+    
+    else if (tip=='-'){ //cikartma ise
+        if(basSay==1){ // 1 basamakli isteniyor ise
+            sayi0=rand()%10; //sayilara 0 ile 10 arasinda rastgele deger ata
+            sayi1=rand()%10;
+            
+            //sayilardan buyuk olanı kucukten cikar.
+            if(sayi0>sayi1){
+                sonuc=sayi0-sayi1;
+                printf("  %d\n",sayi0);
+                printf("  %d\n",sayi1);
+                printf("-\n");
+                printf("------\n");
+                printf("%d\n",sonuc);
+            }
+            
+            
+            else{
+                sonuc=sayi1-sayi0;
+                printf("  %d\n",sayi1);
+                printf("  %d\n",sayi0);
+                printf("-\n");
+                printf("------\n");
+                printf("%d\n",sonuc);
+            }
+}
+       
+        if(basSay==2){ // 2 basamakli isteniyor ise
+            sayi0=10+rand()%90; //sayilara 10 ile 99 arasinda rastgele deger ata
+            sayi1=10+rand()%90;
+            
+            //sayilardan buyuk olanı kucukten cikar.
+            if(sayi0>sayi1){
+                sonuc=sayi0-sayi1;
+            printf("  %d\n",sayi0);
+            printf("  %d\n",sayi1);
+            printf("-\n");
+            printf("------\n");
+            printf("%d\n",sonuc);
+            }
+            
+            
+            else{
+                sonuc=sayi1-sayi0;
+                printf("  %d\n",sayi1);
+                printf("  %d\n",sayi0);
+                printf("-\n");
+                printf("------\n");
+                printf("%d\n",sonuc);
+            }
+        }
+        
+        
+        if(basSay==3){ // 3 basamakli isteniyor ise
+            sayi0=100+rand()%900; //sayilara 100 ile 999 arasinda rastgele deger ata
+            sayi1=100+rand()%900;
+            
+            //sayilardan buyuk olanı kucukten cikar.
+            if(sayi0>sayi1){
+                sonuc=sayi0-sayi1;
+                printf("  %d\n",sayi0);
+                printf("  %d\n",sayi1);
+                printf("-\n");
+                printf("------\n");
+                printf("%d\n",sonuc);
+            }
+            
+            
+            else{
+                sonuc=sayi1-sayi0;
+                printf("  %d\n",sayi1);
+                printf("  %d\n",sayi0);
+                printf("-\n");
+                printf("------\n");
+                printf("%d\n",sonuc);
+            }
+        }
+        }
+    
+    else
+        printf("yanlis char girildi.");
+}
+
+
+int main(int argc, const char * argv[]) {
+    char islemTipi;
+    int basamakSayisi;
+    printf("İslem tipini giriniz(+,-): ");
+    scanf("%c",&islemTipi);
+    printf("\nBasamak sayisini giriniz(max.3basamakli): ");
+    scanf("%d",&basamakSayisi);
+    printf("\n\n");
+    //islem tipi ve basamak sayisi alindiktan sonra fonksiyona gonderiyoruz.
+    islemYaz(islemTipi, basamakSayisi);
+    return 0;
+}

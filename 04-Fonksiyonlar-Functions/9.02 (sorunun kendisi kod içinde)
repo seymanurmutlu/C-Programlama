@@ -1,0 +1,28 @@
+//  Created by Seymanur Mutlu on 9.04.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//Kendisine gonderilen ilk hız (ondalık) ve fırlatma acısı(alfa)(tamsayi) bilgilerine gore egik atilan
+//bir cismin ne kadar süre sonunda yere dusecegini bulan toplamSure adındaki fonksiyonu, ilk hız ve acinin klavyeden
+//girildigi ve sonucunun ekrana yazildigi bir main fonk. ile beraber yaziniz.
+// toplamsure=2x((ilk hız x sin alfe)/9.80)
+// Not: alfa acisinin sinus degeri radyana cevrilerek sin(alfa*M_PI/180) seklinde hesaplanır(#include <math.h>)
+
+#include <stdio.h>
+#include <math.h> 
+void toplamSure(int,int);
+int main(int argc, const char * argv[]) {
+    int ilkHiz,derece;
+    
+    printf("Ilk hizi giriniz (m/s) : ");
+    scanf("%d",&ilkHiz);
+    printf("\nAciyi giriniz(derece) : ");
+    scanf("%d",&derece);
+    
+    toplamSure(ilkHiz, derece);
+    return 0;
+}
+void toplamSure(int hiz,int derece) {
+    
+    float toplamSure=2*((hiz*sin(derece*M_PI/180))/9.80);
+    printf("--------------------\n\n");
+    printf("Cisim %.3f saniye sonra yere düser.",toplamSure);
+}

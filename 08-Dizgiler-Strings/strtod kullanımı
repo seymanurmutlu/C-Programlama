@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main(int argc, const char * argv[]) {
+    
+    char str[30]="20.30300 bu kısım yazidir.";
+    char *cevrilemeyenKisim;
+    double cevrilenKisim;
+    
+    cevrilenKisim=strtod(str, &cevrilemeyenKisim);
+    printf("cevrilen kisim: |%f| \n",cevrilenKisim);
+    printf("cevrilmeyen kisim: |%s| \n",cevrilemeyenKisim);
+    
+    
+    
+    return 0;
+}

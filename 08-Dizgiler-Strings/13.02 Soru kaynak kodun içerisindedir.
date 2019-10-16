@@ -1,0 +1,33 @@
+//  13.02
+//
+//  Created by Seymanur Mutlu on 16.04.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+/*Klavyeden girilen bir cumlenin icerisindeki a ya da A harflerinin sayisini bulan program yaziniz.
+ cumlenin uzunlugu en fazla 255 karakter olmalidir.
+ Ornek cumle: Anastas muz satsana. çıktısı 6 tane olmali.*/
+
+#include <stdio.h>
+
+int main(int argc, const char * argv[]) {
+    char s[256]; //255 karakter girilirse 256.karakter '\0' olacagindan 256 karakterlik yer verdim.
+    int charsayi=0; //cumle uzunlugunu olcmek icin tanimladik.
+    int sayac=0;  //  a veya A ların kac tane oldugunu sayacak olan sayac.
+    int i;
+    printf("Cumlenizi giriniz: ");
+    
+    fgets(s, 256, stdin);
+    
+    while (s[charsayi] != '\0') {
+        charsayi++; //cumle uzunlugunu olcuyoruz.
+    }
+    
+    for (i=0; i<=charsayi; i++) { //cumlenin sonuna kadar her karateri
+        if(s[i]=='a'|| s[i]=='A') //a veya A mı diye kontrol ediyoruz.
+            sayac++; //uyarsa sayaci arttiriyoruz.
+    }
+    
+    printf("\nCumle icinde %d tane 'a' ya da 'A' gecmektedir.\n",sayac);
+
+    return 0;
+}

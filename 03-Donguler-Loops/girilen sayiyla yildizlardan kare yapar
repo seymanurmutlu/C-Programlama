@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+//girilen sayiyla yildizlerdan kare yapar.
+int main()
+{
+    int kenaru,i,j;
+    printf("Bir kenar uzunlugunu giriniz= ");
+    scanf("%d",&kenaru);
+    printf("\n-----------------------------\n\n");
+
+    for(i=1;i<=kenaru;i++){
+        for(j=1;j<=kenaru;j++){
+           printf("*");
+        }
+    printf("\n");
+    }
+    return 0;
+}

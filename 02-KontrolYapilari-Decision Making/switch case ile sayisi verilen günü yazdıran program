@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <stdlib.h>
+/*klavyeden girilen sayiya gore
+gunu soyler.*/
+int main()
+{
+    int gununsayisi;
+    printf("Gunun degerini giriniz[1-7]: ");
+    scanf("%d",&gununsayisi);
+
+    switch(gununsayisi){
+
+case 1 :
+    printf("Girdiginiz deger 'Pazar' a aittir.");
+break;
+
+case 2 :
+    printf("Girdiginiz deger 'Pazartesi' ye aittir.");
+break;
+
+case 3 :
+    printf("Girdiginiz deger 'Salý' ya aittir.");
+break;
+
+case 4 :
+    printf("Girdiginiz deger 'Carsamba' ya aittir.");
+break;
+
+case 5 :
+    printf("Girdiginiz deger 'Persembe' ye aittir.");
+break;
+
+case 6 :
+    printf("Girdiginiz deger 'Cuma' ya aittir.");
+break;
+
+case 7 :
+    printf("Girdiginiz deger 'Cumartesi' ye aittir.");
+break;
+
+default:
+    printf("Yanlis deger girdiniz.");
+
+
+    }
+
+
+    return 0;
+}

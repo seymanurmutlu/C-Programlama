@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main(int argc, const char * argv[]) {
+    
+    int toplamw=0;
+    int sayacwhile=0;
+    
+     while(sayacwhile<=100){
+     toplamw=toplamw+sayacwhile;
+     sayacwhile=sayacwhile+1;
+     //sayacwhile++ yapisi da kullanilabilir.
+     }
+     printf("while dongusu ile yapilan toplam = %d\n",toplamw);
+    
+    return 0;

@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{  
+    //SAYFA89 7.2
+
+    /*Lisansust egitim yapmak icin basvuran adayin ALES puani,
+    yabanci dil puani ve mezuniyet not ortalamasina göre siralama puanini 
+    hesapladiktan sonra siralamaya girip giremeyecegini ekrana yazdiran 
+    c programi yaziniz.Ortalama 60 üzeri ise siralamaya girebilir.*/
+    
+    //siralama puani= ALES'in %50+ Yabanci dil puaninin%25i+mezuniyet puani%25 dir.
+    //ornek degerler: ALES=80.91 , Yabanci Dil=80.50, Mezuniyet ortalamasi=75.56 --> sıralama ort:79.47 siralamaya girebilir.
+
+    float ales,yabancidil,mezuniyet,ort;
+
+    printf("ALES puani girin: ");
+    scanf("%f",&ales);
+
+    printf("Yabancidil puani girin: ");
+    scanf("%f",&yabancidil);
+
+    printf("Mezuniyet puani girin: ");
+    scanf("%f",&mezuniyet);
+
+    ort=ales*0.5+yabancidil*0.25+mezuniyet*0.25;
+
+    printf("----------------------\n");
+    printf("puaniniz: %0.2f\n",ort);
+
+    if(ort>=60 && ort<100)
+        printf("siralamaya girebilir.");
+
+    if(ort<60 && ort>0)
+        printf("siralama giremez.");
+
+    return 0;
+}

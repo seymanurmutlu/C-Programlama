@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+// alinan iki deger arasindaki çift sayilari yazar.
+int main()
+{
+    int deger1,deger2,i=0;
+
+    printf("Alt ve Ust degeri giriniz: ");
+    scanf("%d %d",&deger1,&deger2);
+
+    while(deger1<=deger2){
+       if(deger1%2==0){
+        printf("%d ",deger1);
+        i++;
+       }
+       deger1++;
+    }
+
+    printf("(%d tane)\n",i);
+    return 0;
+}

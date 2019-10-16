@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{      
+
+//SAYFA91 7.8
+/*Dort(4) basamakli (abcd) pozitif tamsayilardan, ilk iki basamagi ile son iki basamaginin carpimi,
+rakamların yer degistirilmis halinin carpımına esit olma (ab*cd=ba*dc) ozelligine sahip olanlara Tersyuz Sayi dendigini
+varsayiniz.Klavyeden girilen dort basamakli bir sayinin Tersyuz olup olmadigini ekrana yazdiran programi yaziniz.*/
+    
+    //denemek icin tersyuz sayi:6213, tersyuz sayi degil=1234
+    
+    int sayi;
+
+    printf("Dort basamakli sayiyi giriniz= ");
+    scanf("%d",&sayi);
+
+    int birler=sayi%10;
+    int onlar=(sayi%100-birler)/10;
+    int yuzler=(sayi%1000-onlar*10-birler)/100;
+    int binler=sayi/1000;
+
+    printf("Binler basamagi: %d \n",binler);
+    printf("Yuzler basamagi: %d \n",yuzler);
+    printf("Onlar basamagi:  %d \n",onlar);
+    printf("Birler basamagi: %d \n",birler);
+
+    printf("------------------\n");
+    if((binler*10+yuzler)*(onlar*10+birler)==(yuzler*10+binler)*(birler*10+onlar))
+        printf("Tersyuz sayidir.\n");
+
+
+    else printf("Tersyuz sayi degildir.\n");
+
+    return 0;
+
+}

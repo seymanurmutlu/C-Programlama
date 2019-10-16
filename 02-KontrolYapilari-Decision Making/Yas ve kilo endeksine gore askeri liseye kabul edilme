@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{   
+    //SAYFA90 7.5
+    //13-17 yasları arasında boy-kilo endeksine gore askeri liseye giris ornegi.
+    int yas;
+    float boy,kilo;
+
+    printf("Yasiniz girin: ");
+    scanf("%d",&yas); //kullanıcının yasını alıyor.
+    printf("Kilonuzu girin(kg): ");
+    scanf("%f",&kilo); //kullanıcının kilosunu alıyor
+    printf("Boyunuzu girin(m): ");
+    scanf("%f",&boy); //kullanıcının boyunu alıyor.
+
+    if(yas>=13 && yas<=17){
+        float vki=kilo/(boy*boy); //vki=vucut kitle endeksidir ve kilonun boy'un karesine oranıdır.
+
+        if(vki>=18.50 && vki<=24.99){
+            printf("vucut kitle indeksiniz: %.2f \n",vki); //%.2f vırgulden sonraki iki basamagi yazdıran float sayi.
+            printf("Tebrikler Askeri liseye girebilirsiniz.\n");
+        }
+        else printf("Vucut kitle indeksiniz uygun degildir.");
+    }
+    else printf("Yasinizdan dolayi okula kabul edilmemektesiniz.");
+
+    //programı denemek için yas:15,kilo:75,boy:1.78 degerlerini girebilisiniz.
+
+    return 0;
+}

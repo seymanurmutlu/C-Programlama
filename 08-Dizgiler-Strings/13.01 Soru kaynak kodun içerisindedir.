@@ -1,0 +1,26 @@
+//  13.1
+//
+//  Created by Seymanur Mutlu on 14.03.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+/*Klavyeden girilen bir cumlenin icerisindeki kelime sayisini bulan programi yaziniz.Cumle
+uzunlugu en fazla 255 olmalidir. */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, const char * argv[]) {
+    
+    char kelime[225]; //klavyeden alincak cumlenin degiskeni.
+    int i,sayac=0;
+    printf("Girilen cumlede kac kelime oldugunu bulur.\n");
+    printf("Kelimeyi girin: ");
+    fgets(kelime, 225, stdin);
+    for(i=0;kelime[i]!='\0';i++){
+        if(isspace(kelime[i])) //bosluk gordukce kelime sayisi arttirmaya dayali isler.
+            sayac++;
+    }
+    printf("Girdiginiz cumle %d kelimeden olusmustur.",sayac);
+    
+    return 0;
+}

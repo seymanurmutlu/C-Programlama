@@ -1,0 +1,24 @@
+//  Created by Seymanur Mutlu on 18.04.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+/*Klavyeden girilen 10 adet ismi içerisinden sonu 'an' ile bitenleri ekrana yazdiran
+ programi kodlayin.*/
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main(int argc, const char * argv[]) {
+    char isimler[10][10]; //isimler icin 10 tane degisken
+    int length[10]; //isimlerin uzunluklari icin 10 degisken
+    int i;
+    printf("isimleri giriniz \n");
+    
+    for (i=0; i<10; i++) { //isimlerin ve uzunluklari ayni sira ile dizilerine kaydediliyor.
+        fgets(isimler[i], 10, stdin);
+        length[i]=(int)strlen(isimler[i])-1;
+    }
+    for (i=0; i<10; i++) {
+        if(isimler[i][length[i]-2]=='a' && isimler[i][length[i]-1]=='n') //son 2.harf a mi? son harf n mi?
+            printf("%s\n",isimler[i]); //ikisini de sagliyorsa yazdir.
+    }
+    
+    return 0;

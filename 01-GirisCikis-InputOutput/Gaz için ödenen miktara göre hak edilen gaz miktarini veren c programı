@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+  float topltutar;
+  float kdvbedeli;
+  float gazbedeli;
+  float hakedlngaz;
+
+  printf("Odenen toplam tutari giriniz = \n");
+  scanf("%f",&topltutar);
+
+  kdvbedeli=topltutar*0.15;
+  gazbedeli=topltutar-kdvbedeli;
+  hakedlngaz=gazbedeli/0.30470;
+
+  printf("----------------------------\n");
+  printf("Odenen toplam tutar = %.2f \n",topltutar);
+  printf("KDV bedeli = %.2f \n",kdvbedeli);
+  printf("Gaz bedeli = %.2f \n",gazbedeli);
+  printf("Hak edilen gaz = %.2f mü \n",hakedlngaz);
+
+    return 0;
+}

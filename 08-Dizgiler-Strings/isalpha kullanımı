@@ -1,0 +1,23 @@
+//  Created by Seymanur Mutlu on 11.03.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+
+#include <stdio.h>
+#include <ctype.h>
+int main(int argc, const char * argv[]) {
+    
+    char c1;
+    
+    printf("karakter gir: ");
+    scanf("%c",&c1);
+
+ if(isalpha(c1)){// harf mi? hazır fonksiyonu.
+ 
+ if(isupper(c1)) //buyuk harf ise kucuk harfi yaz.
+            printf("\nkucuk harf karsiligi: %c\n",tolower(c1));
+ 
+ if(islower(c1)) // kucuk harf ise buyuk harfi yaz.
+            printf("\nbuyuk harf karsiligi: %c\n",toupper(c1));
+            }
+   return 0;
+}

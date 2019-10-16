@@ -1,0 +1,45 @@
+//  Created by Seymanur Mutlu on 9.04.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+/*Kendisine gonderilen zaman diliminin degerine gore (sabah icin 's', oglen icin 'o', aksam isin 'a')
+ bilgisine gore o zaman diliminde rastgele bir zamanı ekrana yazan zamanUret adindaki fonk. yaziniz.(sabah dilimi 08.00.00-10.59.59, ogle dilimi 11.00.00-15.59.59, aksam dilimi 16.00.00-22.59.59)*/
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+void zamanUret(char dilim){
+    
+    int saat,dakika,saniye;
+    srand(time(NULL)); /*program her calistiginda rastgele verilen deger ayni olmasın diye zaman kutuphanesi kullandık.*/
+    
+    if(dilim=='s'){ // sabah ise
+        saat=8+rand()%3; //8 ile 11 arasinda sayi üret
+        dakika=rand()%60;//0 ile 60 arasinda sayi üret
+        saniye=rand()%60; //0 ile 60 arasinda sayi üret
+        printf("\n%d.%d.%d\n",saat,dakika,saniye);
+    }
+    else if (dilim=='o'){ //oglen ise
+        saat=12+rand()%4; //12 ile 14 arasinda sayi üret
+        dakika=rand()%60; //0 ile 60 arasinda sayi üret
+        saniye=rand()%60; //0 ile 60 arasinda sayi üret
+        printf("\n%d.%d.%d\n",saat,dakika,saniye);
+    }
+    else if(dilim=='a'){ //aksam ise
+        saat=17+rand()%6; //17 ile 22 arasinda sayi uret.
+        dakika=rand()%60; //0 ile 60 arasinda sayi üret
+        saniye=rand()%60; //0 ile 60 arasinda sayi üret
+        printf("\n%d.%d.%d\n",saat,dakika,saniye);
+    }
+    else
+        printf("\nGecerli zaman dilimi girmediz.\n");
+    
+}
+int main(int argc, const char * argv[]) {
+   
+    char zamanDilimi = '\0';
+   
+    printf("Zaman dilimi giriniz: ");
+    scanf("%c",&zamanDilimi); //zaman dilimi alınıp fonksiyona gonderildi.
+    
+    zamanUret(zamanDilimi);
+    return 0;
+}

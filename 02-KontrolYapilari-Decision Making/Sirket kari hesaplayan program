@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{   
+
+  //SAYFA95 7.20
+  
+  /*BİL101 Holding, uc ayri alternatif yatirimi degerlendirmektedir. Bu yatirimlarin baslangic sermayesi
+  ve yillik getirileri belirlenmistir. Klavyeden girilen sermaye ve her yil sonundaki getiri degerine gore,
+  (15 yil sonunda en karli yatirimin hangisi oldugunu bulup getirilerin sabit oldugu düşünülmelidir.Net kar
+  bulunurken, toplam getiriden baslangic sermayesi dusunulmelidir.) */
+  
+  /*Ornek degerler;
+  Birincisin sermayesini ve yillik getirisi: 30000 5000
+  ikincisinin sermayesini ve yillik getirisi: 50000 9000
+  Ucuncu sermayesini ve yillik getirisi: 70000 10000
+  en karli yatirim 2.yatirimdir.*/
+  
+  int birser,biryil,ikiser,ikiyil,ucser,ucyil;
+
+    printf("Birincisin sermayesini ve yillik getirisini girin: ");
+    scanf("%d %d",&birser,&biryil);
+    printf("\n");
+    printf("ikincisinin sermayesini ve yillik getirisini girin: ");
+    scanf("%d %d",&ikiser,&ikiyil);
+    printf("\n");
+    printf("Ucuncu sermayesini ve yillik getirisini girin: ");
+    scanf("%d %d",&ucser,&ucyil);
+
+    int karbir=15*biryil-birser;
+    int kariki=15*ikiyil-ikiser;
+    int karuc=15*ucyil-ucser;
+
+    printf("\n");
+
+    if(karbir>karuc && karbir>kariki) printf("En karli yatirim 1.yatirimdir.");
+
+    if(kariki>karbir && kariki>karuc) printf("En karli yatirim 2.yatirimdir.");
+
+    if(karuc>karbir && karuc>kariki) printf("En karli yatirim 3.yatirimdir.");
+
+    printf("\n");
+    return 0;
+}

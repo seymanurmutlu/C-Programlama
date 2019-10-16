@@ -1,0 +1,26 @@
+//  Created by Seymanur Mutlu on 7.03.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+
+#include <stdio.h>
+
+int main(int argc, const char * argv[]) {
+/*butun uc basamakli sayilar icinde kendisi olusturan sayinin
+ küplerinin toplamına eşit olan sayilari yazdirin. Ornek: 153 sayisi.*/
+    
+    int i,sayac=0;
+    int bir,on,yuz;
+    
+    printf("Aranilan sayilar: ");
+    for(i=100;i<1000;i++){
+        bir=i%10;
+        on=(i/10)%10;
+        yuz=(i/100);
+        if(i==bir*bir*bir+on*on*on+yuz*yuz*yuz){
+            sayac++;
+            printf("%d, ",i);
+        }
+    }
+    printf("Bu ozellige sahip %d tane uc basamakli sayi vardir.",sayac);
+    return 0;
+}

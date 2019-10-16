@@ -1,0 +1,25 @@
+//  Created by Seymanur Mutlu on 15.03.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+
+#include <stdio.h>
+
+int main(int argc, const char * argv[]) {
+    //Ders kodlari: BİL102,MAT151,BME224,TURK234,FİZ101 gibidir.
+    char ders[5][8];
+    
+    int i;
+    printf("ders kodlarini giriniz: ");
+    
+    for(i=0;i<5;i++){
+        scanf("%s",ders[i]);
+    }
+    printf("\nB harfi ile baslayanlar: \n");
+    
+    for (i=0; i<5 ; i++) {
+        if(ders[i][0]=='B')
+            printf("%s, ",ders[i]);
+    }
+    printf("\n");
+    
+    return 0;

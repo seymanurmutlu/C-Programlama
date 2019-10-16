@@ -1,0 +1,27 @@
+//  Created by Seymanur Mutlu on 14.03.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+
+#include <stdio.h>
+
+int main(int argc, const char * argv[]) {
+    char tel[50];
+    char *ptr;
+    
+    printf("Bir telefon numarasi giriniz: ");
+    scanf("%s",tel);
+    printf("Ayrilmis hali: \n");
+    
+    ptr=strtok(tel,"-");
+
+    printf("Ulke kodu: %s \n",ptr);
+    ptr=strtok(NULL,"-");
+    
+    printf("Alan kodu: %s \n",ptr);
+    ptr=strtok(NULL,"-");
+    
+    printf("telefon numarasi: %s \n",ptr);
+    
+    
+    return 0;
+}

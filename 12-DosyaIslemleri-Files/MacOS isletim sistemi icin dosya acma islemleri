@@ -1,0 +1,37 @@
+//
+//  main.c
+//  dosyaIslemleri
+//
+//  Created by Seymanur Mutlu on 12.01.2019.
+//  Copyright © 2019 Seymanur Mutlu. All rights reserved.
+//
+
+#include <stdio.h>
+#include <unistd.h>
+
+int main(int argc, const char * argv[]) {
+    
+    char dosyaYolu[256];
+    if(getcwd(dosyaYolu, 256) == NULL){
+        fprintf(stderr, "Dosya yolu bulunamadi.");
+        exit(1);
+    }
+    printf("%s\n",dosyaYolu);
+    
+    FILE *fptr;
+    fptr = fopen("deneme.txt", "r");
+    if (fptr == NULL) {
+        printf("Dosya acilamadi.");
+        exit(1);
+    }
+    printf("Dosya acildi.\n");
+    
+    char paragraf;
+    while (!feof(fptr)) {
+        fscanf(fptr, "%c", &paragraf);
+        printf("%c",paragraf);
+    }
+
+        
+    return 0;
+}

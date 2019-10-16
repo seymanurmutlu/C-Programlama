@@ -1,0 +1,33 @@
+//  Created by Seymanur Mutlu on 17.04.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+/*Ozel bir sayi sisteminde 1 yerine I,10 yerine U, 100 yerine de Z simgeleri kullanilmaktadir.
+ Bu sistemde bir tamsayi kullandigimiz onluk sistemde kaç tane birlik,onluk,yüzlük varsa I,U veya Z simgelerinden
+ o kadari yanyana dizilerek yazilir. bu ozel sayi sisteminde girilen en fazla 50 basamakli tamsayiyi onluk
+ sayi sistemine cevirip ekrana yazan programi yaziniz.*/
+#include <stdio.h>
+#include <string.h>
+
+int main(int argc, const char * argv[]) {
+    char sayi[50]; //alinacak sayi
+    int toplam=0;
+    int i;
+    printf("Ozel sayi sistemindeki sayiyi girin: ");
+    fgets(sayi, 50, stdin);
+    
+    int chrsayi=strlen(sayi); //uzunlugu
+    
+    for (i=0; i<chrsayi ; i++) { //uzunluk kadar donguye giriyor
+       
+        if(sayi[i]=='Z') //Z ise toplama 100 ekle.
+            toplam=toplam+100;
+        else if (sayi[i]=='U') //U ise toplama 10 ekle.
+            toplam=toplam+10;
+        else if (sayi[i]=='I')//I ise toplama 1 ekle.
+           toplam=toplam+1;
+        
+    }
+    printf("Toplam = %d \n",toplam);
+
+    return 0;
+}

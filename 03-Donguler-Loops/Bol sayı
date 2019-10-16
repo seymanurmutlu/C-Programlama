@@ -1,0 +1,38 @@
+//  Created by Seymanur Mutlu on 8.03.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+
+#include <stdio.h>
+
+int main(int argc, const char * argv[]) {
+    /*Bol sayi: kendisi haric bölenlerinin toplami kendisinden buyuk olan sayilardir.*/
+    
+    //8.46
+    int bir,iki,uc;
+    int art=0,azal=0,es=0;
+    do{
+    printf("Uc sayi giriniz: ");
+    scanf("%d%d%d",&bir,&iki,&uc);
+    
+    if(bir>iki && bir>uc && iki>uc){
+        printf("Girilenler azalan sirada dizilmis.\n");
+        azal++;
+    }
+    else if (uc>iki && uc>bir && iki>bir){
+        printf("Girilenler artan sirada dizilmis.\n");
+        art++;
+    }
+    else if (bir==iki && bir==uc){
+        printf("Program bitti.\n");
+        continue;
+        
+    }
+    else{
+        printf("Girilenler karisik sirada girilmis.\n");
+        es++;
+    }
+        }while(bir!=iki && bir!=uc);
+    
+    printf("\nGirilen dizilerden %d tanesi artan, %d tanesi azalan, %d tanesi karisiktir.\n\n",art,azal,es);
+    return 0;
+}

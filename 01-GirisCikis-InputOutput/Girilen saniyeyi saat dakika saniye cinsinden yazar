@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int saniye;
+    int dakika;
+    int saat;
+
+    printf("saniye cinsinden sureyi giriniz = ");
+    scanf("%d",&saniye);
+
+    saat=saniye/3600;
+    saniye=saniye%3600;
+    dakika=saniye%60;
+
+    printf("Girilen sure %d saat, %d dakika , %d saniye olarak hesaplanmistir",saat,dakika,saniye);
+
+    return 0;
+}

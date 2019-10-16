@@ -1,0 +1,31 @@
+//  Created by Seymanur Mutlu on 17.03.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+/*Bu soruda bir simulasyonu gerçekleştireceğiz.Dogada bulunan kurt ve tavsan
+ nufusları birbirine baglı olarak degisir.Turlerden birisindeki artma ya da
+ azalma diger turude etkiler.Kurt ve tavsan nufusları arasındaki bağıntı asagidaki gibi
+ formuluze edilebilir.
+ tyarin=((1+0.01)*tbugun)-(0.00001*tbugun*kbugun);
+ kyarin=((1-0.005)*kbugun)+(0.00001*0.01*tbugun*kbugun);
+ Baslangicta 10000 tane tavsan 10000 tane kurt oldugunu varsayarsak toplam 100gun
+ icin her gunun sonunda kaç tane tavsan kac tane kurt kaldıgını hesaplayıp ekrana yazan c programını
+ kodlayınız.*/
+#include <stdio.h>
+
+int main(int argc, const char * argv[]) {
+    int kbugun=10000,kyarin;
+    int tbugun=10000,tyarin;
+    
+    int i;
+    
+    for (i=1; i<=100; i++) {
+        tyarin=((1+0.01)*tbugun)-(0.00001*tbugun*kbugun);
+        kyarin=((1-0.005)*kbugun)+(0.00001*0.01*tbugun*kbugun);
+        printf("%d.GUN: tavsan:%d kurt:%d \n",i,tbugun,kbugun);
+        tbugun=tyarin;//yazdirdiktan sonra islemlerin duzgun devam edebilmesi icin bugunun sonunu yarinin baslangicina ata.
+        kbugun=kyarin;
+    }
+    
+    
+    return 0;
+}

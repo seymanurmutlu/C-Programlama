@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <stdlib.h>
+//8.16
+int main()
+{
+    int sayi,i;
+    char cins;
+    printf("Maymunun cinsiyetini giriniz(Erkek: E/e , Disi: D/d): ");
+    scanf("%c",&cins);
+    printf("\nMaymunun kafese kac kere girdigini yaziniz: ");
+    scanf("%d",&sayi);
+
+    switch (cins){
+    case 'E' :
+    case 'e' :
+    if(sayi>=1 && sayi<=4){
+        for(i=1;i<=sayi;i++){
+        printf("\n%d.Girisinde toplamda %d muz yemis oldu.\n",i,2*i);
+        } }
+    else if(sayi>4){
+        int toplam=10;
+        toplam=toplam+(int)((toplam-sayi)/2)+1;
+        for(i=0;i<=4;i++)
+            printf("%d.Girisinde toplamda %d muz yemis oldu. \n",i+1,i+1);
+        for(i=1;i<=sayi;i++){
+            printf("\n%d.Girisinde toplamda %d muz yemis oldu.\n",i,2*toplam);
+        }
+    }
+    case 'D' :
+    case 'd' :
+    if(sayi>=1 && sayi<=4){
+        for(i=1;i<=sayi;i++){
+        printf("\n%d.Girisinde toplamda %d muz yemis oldu.\n",i,i);
+        } }
+    else if(sayi>4){
+        int toplam=10;
+        toplam=toplam+(int)((toplam-sayi)/2)+1;
+        for(i=0;i<=4;i++)
+            printf("%d.Girisinde toplamda %d muz yemis oldu. \n",i+1,i+1);
+        for(i=5;i<=sayi;i++){
+            printf("%d.Girisinde toplamda %d muz yemis oldu.\n",i,toplam);
+        }
+    }
+    }
+    return 0;
+}

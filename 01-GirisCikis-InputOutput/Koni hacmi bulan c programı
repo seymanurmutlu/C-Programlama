@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    float kcap;
+    float kyukseklik;
+    float PI=3.1419;
+    float khacim;
+
+    printf("Koninin capini giriniz = \n");
+    scanf("%f",&kcap);
+
+    printf("Koninin yuksekligini giriniz = \n");
+    scanf("%f",&kyukseklik);
+
+    khacim = PI*kcap*kcap*kyukseklik/3;
+
+    printf("Koninin hacmi = %f",khacim);
+
+    return 0;
+}

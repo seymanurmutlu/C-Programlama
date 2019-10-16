@@ -1,0 +1,49 @@
+//  Created by Seymanur Mutlu on 14.03.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+
+#include <stdio.h>
+#include <ctype.h>
+void frekans(char s[100]){
+    int i,digit=0,punct=0,kucuk=0,buyuk=0;
+    for(i=0;s[i]!='\0';i++){
+        if (isdigit(s[i])) {
+            digit++;
+        }
+        if (ispunct(s[i])) {
+            punct++;
+        }
+        if (isalpha(s[i])) {
+            if(islower(s[i]))
+                kucuk++;
+            if(isupper(s[i]))
+                buyuk++;
+        }
+    }
+    printf("kucuk:%d buyuk:%d noktalama:%d rakam:%d\n",kucuk,buyuk,punct,digit);
+}
+
+void harfcevir(char s[100]){
+    int i;
+    for(i=0;s[i]!='\0';i++){
+        if(isupper(s[i]))
+            s[i]=tolower(s[i]);
+        else if(islower(s[i]))
+            s[i]=toupper(s[i]);
+    }
+    printf("%s \n",s);
+}
+
+
+int main(int argc, const char * argv[]) {
+    
+    char s[100];
+    printf("Cumleyi girin: ");
+    fgets(s,100,stdin);
+    
+    frekans(s);
+    harfcevir(s);
+    
+    
+    return 0;
+}

@@ -1,0 +1,42 @@
+//  Created by Seymanur Mutlu on 26.04.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+// LINK ICINDE CALISIR HALDEKI VIDEOSU VAR https://www.youtube.com/watch?v=sciAdX-3wEE
+
+#include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
+
+
+int main(int argc, const char * argv[]) {
+    printf("Program basladiginda bilgisayarimiz 1 ile 100 arasinda bir sayi tutar.\n");
+    printf("Biz klavyeden bir sayi girecegiz ve bilgisayarimiz bizi sayiya dogru yonlendirecek\n");
+    printf("Sayiyi kacincida bileceksin?\n");
+    srand(time(NULL)); //rastgele sayilar icin time kutuphanesini kullaniyorum.
+    
+    int sayitut = rand()%100 + 1; //1 ile 100 arasinda herhangi bir sayi ataniyor.
+    
+    int sayi; //klavyeden alacagimiz sayilar icin;
+
+    printf("Ilk tahmininizi girin : ");
+    scanf("%d",&sayi);
+    
+    
+    while (sayitut != sayi) {
+        if(sayi<sayitut){
+            printf("\nYukari Yukari!");
+            printf("Yeni tahmin girin :");
+            scanf("%d",&sayi);
+        }
+        
+        else if (sayi>sayitut){
+            printf("\nAsagi Asagi!");
+            printf("Yeni tahmin girin :");
+            scanf("%d",&sayi);
+        }
+    }
+    
+    printf("\nVooov kacinci basamakta buldugunu not et ve arkadasinla yaris!\n");
+
+    
+    return 0;
+}

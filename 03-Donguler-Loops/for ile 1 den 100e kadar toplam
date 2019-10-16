@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main(int argc, const char * argv[]) {
+ 
+    int sayacfor=0;
+    int toplamf=0;
+   
+    for(sayacfor=0;sayacfor<=100;sayacfor++){
+        
+        toplamf=toplamf+sayacfor;
+        
+    }
+    printf("for dongusu ile yapilan toplam = %d \n",toplamf);
+    
+    
+    return 0;
+}

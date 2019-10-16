@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    /*klavyeden inc cinsinden uzunlugu girilen uzunlugu cm ve mmye
+    ceviren program (1 inc 2,54cm)*/
+
+    float uzinc,uzcm,uzmm;
+
+    printf("Uzunluk(inc)=");
+    scanf("%f",&uzinc);
+
+    uzcm=(2.54)*uzinc;
+    uzmm=uzcm*10;
+
+    printf("--------------------------------\n");
+    printf("%.2f inc = %.2f cm = %.2f mm\n\n",uzinc,uzcm,uzmm);
+
+    return 0;
+}

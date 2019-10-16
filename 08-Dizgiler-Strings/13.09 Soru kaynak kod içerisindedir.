@@ -1,0 +1,71 @@
+//  Created by Seymanur Mutlu on 17.04.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+/*Klavyeden girilen iki adet zaman degerine gore ikisinin arasindaki farki saniye olarak hesaplayip ekrana yazdiran 
+c programini yaziniz.Zamanlar ayri birer dizgi olarak okutulmalidir.Her zaman SS:DD:SS(saat.dakika.saniye) 
+biciminde verilecektir.*/
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main(int argc, const char * argv[]) {
+    char zaman1[9];
+    double saat1,dakika1,saniye1;
+    char *saatp1,*dakikap1,*saniyep1;
+    
+    char zaman2[9];
+    double saat2,dakika2,saniye2;
+    char *saatp2,*dakikap2,*saniyep2;
+    
+    double saatfark,dakikafark,saniyefark,sonuc;
+    
+    printf("Birinci zamani giriniz\n");
+    scanf("%s",zaman1);
+    
+    saat1=strtod(zaman1,&saatp1);
+    dakika1=strtod(zaman1+3,&dakikap1);
+    saniye1=strtod(zaman1+6, &saniyep1);
+    
+    
+    printf("Ikinci zamani giriniz\n");
+    scanf("%s",zaman2);
+    
+    saat2=strtod(zaman2,&saatp2);
+    dakika2=strtod(zaman2+3,&dakikap2);
+    saniye2=strtod(zaman2+6, &saniyep2);
+    
+    if(saat1>saat2){ //saat1 daha buyukse diger sonuclar(dakika saniye) negatif ciksa bile toplam saniye farki
+        saatfark=saat1-saat2; //hesaplanmis olur.
+        dakikafark=dakika1-dakika2;
+        saniyefark=saniye1-saniye2;
+        sonuc=(saatfark*3600)+(dakikafark*60)+(saniyefark);
+        
+    }
+    else if(saat2>saat1){ //saat2 daha buyukse diger sonuclar(dakika saniye) negatif ciksa bile toplam saniye farki
+        saatfark=saat2-saat1; //hesaplanmis olur.
+        dakikafark=dakika2-dakika1;
+        saniyefark=saniye2-saniye1;
+        sonuc=(saatfark*3600)+(dakikafark*60)+(saniyefark);
+    }
+    else if (saat1==saat2){
+        saatfark=0;
+        if(dakika1>dakika2){ //saatte uyguladigimiz mantigi burada da uyguluyoruz. saniye negatif cikarsa da
+            dakikafark=dakika1-dakika2; //toplam saniye farkini aradigimiz icin sorun yok.
+            saniyefark=saniye1-saniye2;
+            sonuc=(dakikafark*60)+(saniyefark);
+        }
+        else if (dakika2>dakika1){ //saatte uyguladigimiz mantigi burada da uyguluyoruz. saniye negatif cikarsa da
+            dakikafark=dakika2-dakika1; //toplam saniye farkini aradigimiz icin sorun yok.
+            saniyefark=saniye2-saniye1;
+            sonuc=(dakikafark*60)+(saniyefark);
+        }
+        else{ //saatler esitken,dakikalar da esit se
+            sonuc=fabs(saniye1-saniye2); /*en kucuk birim bazinda oldugu icin buyugu kucugu kontrol
+                                               etmek yerine mutlak deger fonk kullaniyorum. math.h kutuphanesini
+                                               unutmuyorum.*/
+        }
+    }
+    printf("Aradaki fark : %.lf saniyedir.\n",sonuc);
+    
+    return 0;
+}

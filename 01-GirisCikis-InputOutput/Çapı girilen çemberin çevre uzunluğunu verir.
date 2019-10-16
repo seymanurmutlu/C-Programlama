@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    /*Capi girilen bir cemberin uzunlugunu bulan
+    program (pi=3.14)
+    ORNEK:
+    Cemberin capini giriniz: 10
+    ----------------------------
+    Cemberin uzunlugu: xxx
+    */
+
+    float cembercap,cemberuz;
+
+    printf("Cemberin capini giriniz: ");
+    scanf("%f",&cembercap);
+
+    cemberuz=2*(3.14)*cembercap;
+    printf("---------------------------");
+    printf("\nCember uzunlugu: %.2f",cemberuz);
+
+
+
+
+    return 0;
+}

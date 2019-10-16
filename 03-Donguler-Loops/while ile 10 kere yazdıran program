@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main(int argc, const char * argv[]) {
+  
+    int sayac=1;
+    
+    while (sayac<=10) {
+       // printf("sayac = %d\n",sayac); bu satiri kullanarak sayacı takip edebilirsiniz.
+        printf("while ile 10 kere yaz.\n");
+        sayac++;
+    }
+    
+    return 0;
+}

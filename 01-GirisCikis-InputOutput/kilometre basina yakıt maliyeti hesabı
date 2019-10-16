@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+//ORNEK 6.10
+
+int main()
+{
+    /*klavyeden girilen km basina harcanan yakit miktari,
+    yakitin litre fiyati ve aracin yaptigi toplam km miktarina
+    gore aracin toplam yakit maliyetini bulan program yaziniz.
+
+    ORNEK:
+    Km basina yakit tuketimi(lt): 0.1
+    1 lt yakitin fiyati: 2.080
+    Aracin kat ettigi toplam yol: 1000
+    -----------------------------------
+    Toplam yakit maliyeti: 208 TL
+    */
+
+    float kmyakittuk,litrefiyat,toplamyol,maliyet;
+
+    printf("Km basina yakit tuketimi(lt): ");
+    scanf("%f",&kmyakittuk);
+
+    printf("\n1 lt yakitin fiyati:          ");
+    scanf("%f",&litrefiyat);
+
+    printf("\nAracin kat ettigi toplam yol: ");
+    scanf("%f",&toplamyol);
+
+    maliyet=kmyakittuk*litrefiyat*toplamyol;
+
+    printf("\nToplam yakit maliyeti: %.2f\n",maliyet);
+
+
+
+    return 0;
+}

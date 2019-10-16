@@ -1,0 +1,75 @@
+//  Created by Seymanur Mutlu on 10.04.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+/* Sozunde durmayan aile babasi kendisine gelen tum "Tatile ne zamab cikiyoruz?"
+ sorularina icinde bulunulan mevsim disinda baska bir mevsim soyleyerek surekli ertelemektedir.
+ Aile babasinin isini kolaylastiracak ertelemeMesajiYaz adindaki fonksiyonu mainle ile birlikte yaziniz.
+ 12,1,2--> kis, 3,4,5-->ilkbahar...
+ */
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+void ertelemeMesajiYaz(int ay){
+    srand(time(NULL)); //random sayi icin
+    int mevsim; //yeni mevsim icin.
+    
+    
+    if(ay==12||ay==1||ay==2){ //kis ise
+        mevsim=2+rand()%3; //2 ile 4 arasinda bir sayi ata.
+    }
+    
+    if(ay==3||ay==4||ay==5){ //ilkbahar ise
+        mevsim=1+rand()%4; //1 ile 4 arasinda sayi ata
+        if(mevsim==2) //gelen sayi 2 ise (ilkbahar = 2)
+            while (mevsim==2) { //2 gelmeyene kadar başka sayi ata.
+                mevsim=1+rand()%4;
+            }}
+    
+    if(ay==6||ay==7||ay==8){ //yaz ise
+        mevsim=1+rand()%4; //1 ile 4 arasinda sayi ata
+        if(mevsim==3) //gelen sayi 3 ise (yaz=3)
+            while (mevsim==3) { //3 gelmeyene kadar yeni sayi ata.
+                mevsim=1+rand()%4;
+            }}
+    
+    if(ay==9||ay==10||ay==11){
+        mevsim=1+rand()%4; //1 ile 4 arasinda sayi ata
+        if(mevsim==3) //gelen sayi 4 ise (sonbahar=4)
+            while (mevsim==4) { //4 gelmeyene kadar yeni sayi ata.
+                mevsim=1+rand()%4;
+            }}
+    
+    switch (mevsim) { //yukaridan gelecek sayiya gore mevsim yazdiriyoruz.
+        
+        case 1: //1 gelirse kis yaz gibi...
+            printf("kisin tatile gidecegiz.");
+            break;
+        
+        case 2:
+            printf("ilkbaharda tatile gidecegiz.");
+            break;
+            
+        case 3:
+            printf("yazin tatile gidecegiz.");
+            break;
+            
+        case 4:
+            printf("sonbaharda tatile gidecegiz.");
+            break;
+            
+        default: //oylesine
+            printf("girl power!");
+            break;
+    }
+
+}
+
+
+int main(int argc, const char * argv[]) {
+    int ay;
+    printf("kacinci ayda oldugumuzu giriniz: ");
+    scanf("%d",&ay);
+    ertelemeMesajiYaz(ay);
+    
+    return 0;
+}

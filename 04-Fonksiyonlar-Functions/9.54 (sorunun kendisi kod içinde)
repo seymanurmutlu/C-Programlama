@@ -1,0 +1,37 @@
+//  Created by Seymanur Mutlu on 13.04.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+/*Kendisine gonderilen agirlik(kg) ve boy(cm) degerlerine gorr insan bedeninin alanini(m2)
+ hesaplayip geri donduren alan adindaki fonksiyonu main() fonksiyonu ile birlikte yaziniz.
+ degerler(boy ve kilo) degerleri klavyeden girilmesi ve fonksiyonun cagirilip sonucun ekrana yazdirilmasi
+ ana fonk icinde gerceklesmelidir.
+ insan bedeni alanina bsa, boya h, agirliga w denirse alan bsa=h0.725*w0.425*71,84*0.0001
+ formulu ile hesaplanir.
+ */
+
+#include <stdio.h>
+#include <math.h>
+
+int alan(float boy,float kilo){
+    float balani; //beden alani geri dondurelecek deger.
+    float h=powf(boy, 0.725); //islem yaparken kolay olmasi icin h0.725 i hesaplattik
+    float w=powf(kilo, 0.425); //ayni sekilde islem yaparken kolaylik olsun w0.425
+    balani=h*w*71.84*0.0001; //islem yapildi.
+    return balani; //geri donus degeri gondeildi.
+}
+
+int main(int argc, const char * argv[]) {
+    float bsa,h,w; //h=boy, w=kilo bsa=vucut alani oldugunu tekrar hatirlatalim.
+    
+    printf("boyunuzu giriniz(cm): ");
+    scanf("%f",&h);
+    printf("\nkilonuzu giriniz(kg): ");
+    scanf("%f",&w);
+    bsa=alan(h,w); //fonksiyondan donecek deger bsa'ya esit olacak ve bsa'yi yazdiracagiz.
+    printf("\n--------------------\n");
+    printf("Beden alani = %.3f metrekaredir.\n",bsa);
+    
+    
+    
+    return 0;
+}

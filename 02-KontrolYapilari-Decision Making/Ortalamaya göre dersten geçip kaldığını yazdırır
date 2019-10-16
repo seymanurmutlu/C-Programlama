@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    //SAYFA89 7.1
+
+/*Bir dersten alinan vize,final ve devam puanlari girilip,
+ortalamayi hesapladiktan sonra dersten gecip kaldigini 
+ekrana yazdiran c programi.*/
+
+//ortalama puan=vizenin%40+finalin%50+devampuaninin%10 dur.
+//deneme sayilari icin vize 80,final 80,devam puani 75 --> ortalama 79.50 
+
+    int arasnv;
+    int fnal;
+    int devam;
+    float aort;
+
+    printf("Arasinav notunuzu giriniz = \n");
+    scanf("%d",&arasnv);
+    printf("Final notunuzu giriniz = \n");
+    scanf("%d",&fnal);
+    printf("Devam notunuzu giriniz = \n");
+    scanf("%d",&devam);
+    printf("-------------------------\n");
+
+    aort=arasnv*0.40+fnal*0.50+devam*0.10;
+
+    printf("Agirlikli ortalamaniz = %.3f \n",aort);
+    if(aort<60 && aort>0)
+        printf("Kaldiniz.\n");
+
+    else if(aort>=60 && aort<=100)
+        printf("Tebrikler.Gectiniz.\n");
+
+    else printf("Hatali degerler girdiniz.\n");
+
+    return 0;
+
+}

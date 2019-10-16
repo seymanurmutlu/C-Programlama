@@ -1,0 +1,41 @@
+//  Created by Seymanur Mutlu on 11.03.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+
+#include <stdio.h>
+#include <string.h>
+
+int main(int argc, const char * argv[]) {
+   
+    char s1[100]="aa bbb cc";
+    char s2[100];
+    
+    int karakterSayisi=strlen(s1);
+    printf("strlen(s1): %d\n",karakterSayisi);
+    
+    strcpy(s2, s1); //s1'i s2'ye kopyalar.
+
+    printf("s1: %s\n",s1);
+    printf("s2: %s\n",s2);
+    
+    strcpy(s1, "test"); //'test' i s1'e kopyalar.
+    strcpy(s2, "deneme2"); //'deneme2' yi s2'ye kopyalar.
+    
+    printf("s1:%s\n",s1);
+    printf("s2:%s\n",s2);
+    
+    strcat(s1,s2); s2'yi s1'in sonuna ekler(string birlestirme).
+    printf("strcat(s1,s2) sonrasında\n");
+    printf("s1: %s\n",s1);
+   
+    printf("\n\n");
+    
+    strcpy(s1, "test");
+    strcpy(s2, "deneme2");
+    strcpy(s1+strlen(s1), s2);
+    
+    printf("strcpy(s1+srtlen(s1),s2) sonrasinda\n");
+    printf("s1:%s\n",s1);
+    printf("s2:%s\n",s2);
+    return 0;
+}

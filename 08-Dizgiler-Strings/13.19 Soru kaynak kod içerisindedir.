@@ -1,0 +1,23 @@
+//  Created by Seymanur Mutlu on 18.04.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+/*Klavyeden girilen 10 adet isimden ilk ve son karakterleri ayni olanlari ekrana listeleyen
+ programi yaziniz.*/
+#include <stdio.h>
+#include <string.h>
+int main(int argc, const char * argv[]) {
+    char isimler[10][10]; //klavyeden alinacaklar icin tanimlanan degisken
+    int lenght[10]; //her isim degiskeni icin uzunluk hesabi da yapilacak.
+    int i;
+    printf("10 tane isim girin\n");
+    
+    for(i=0;i<10;i++){
+        fgets(isimler[i], 10, stdin);
+        lenght[i]=(int)strlen(isimler[i])-1;
+    }
+    for(i=0;i<10;i++){
+        if(isimler[i][0]==isimler[i][lenght[i]-1])
+            printf("%s\n",isimler[i]);
+    }
+    return 0;
+}

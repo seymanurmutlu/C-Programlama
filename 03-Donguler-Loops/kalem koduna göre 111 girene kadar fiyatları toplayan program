@@ -1,0 +1,35 @@
+//  Created by Seymanur Mutlu on 4.03.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+
+/*Kırtasiyeci, her gunun sonunda sattigi kalemlerden kaç lira kazandigini program ile hesaplamak istemektedir.
+Gunluk girdi bitimi icicn 111 girilmesi gereklidir.*/
+#include <stdio.h>
+
+int main(int argc, const char * argv[]) {
+    
+    printf("Kalem Rengi     Urun kodu    Birim Fiyat\n");
+    printf("Kirmizi         11           1,5\n");
+    printf("Lacivert        12           2,0\n");
+    printf("Beyaz           13           2,5\n");
+    printf("Mavi            14           3,0\n");
+    printf("Sari            15           4,0\n");
+    
+    int sayi=0;
+    float toplam=0;
+    
+    while(sayi != 111){
+    printf("Kalemlerin ürün kodlarini girin(Durmak icin 111): \n");
+    scanf("%d",&sayi);
+    
+        if(sayi==11) toplam=toplam+1.5;
+        else if (sayi==12) toplam=toplam+2;
+        else if (sayi==13) toplam=toplam+2.5;
+        else if (sayi==14) toplam=toplam+3;
+        else if (sayi==15) toplam=toplam+4;
+     }
+    printf("Gun sonu satis kazanci : %.2f TL dir.",toplam);
+    
+    
+    return 0;
+}

@@ -1,0 +1,28 @@
+//  Created by Seymanur Mutlu on 11.03.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+
+#include <stdio.h>
+#include <stdlib.h>//atoi,atol,atof gibi fonksiyonlar stdlib'dedir.
+
+int main(int argc, const char * argv[]) {
+    char s[50];
+    int a;
+    long b;
+    double c;
+    //kucuk sayilarla 15-20 basamakli sayilarla test edin.
+    //sonra kesirli sayilarla test edin.
+    
+    printf("sayi girin: ");
+    gets(s);
+    
+    a=atoi(s);//integer'a cevir.
+    b=atol(s);//long'a cevir.
+    c=atof(s);//double'a cevir.
+    
+    printf("int : %d\n",a);
+    printf("long: %ld\n",b);
+    printf("double: %lf\n",c);
+    
+    return 0;
+}

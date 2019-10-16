@@ -1,0 +1,41 @@
+//  Created by Seymanur Mutlu on 6.03.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+
+#include <stdio.h>
+
+int karakterSay(const char *s ){
+    int i;
+    for(i=0;s[i] != '\0';i++);
+        return i;
+}
+
+int karakterAra(const char *s,char c){
+    int i;
+    
+    for(i=0;s[i] != '\0';i++){
+        if(s[i]==c) return i;
+    }
+ return -1;
+}
+
+int main(int argc, const char * argv[]) {
+    // string icinde karakter arar.
+    
+    char cumle[100];
+    
+    printf("cumle giriniz: ");
+    fgets(cumle, 100,stdin);//cumle alinir.
+    
+    printf("cumle uzunlugu = %d\n",karakterSay(cumle));//cumle fonk.'a gonderilir ve kac karakterli oldugu geri döner.
+    
+    int yer=karakterAra(cumle,'u');//'u' yerine aranmak istenen char da girilebilir.Fonk.'dan geri dönüs degerine gore ekrana yazdirilir.
+    
+    if(yer==-1)
+        printf("Cumlede yok.");
+    else
+        printf("cumde %d.indexte bulunuyor.",yer);
+    
+    
+    return 0;
+}

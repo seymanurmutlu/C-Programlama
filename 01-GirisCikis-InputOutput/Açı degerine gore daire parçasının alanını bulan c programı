@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int aci;
+    float ycap;
+    float alan;
+    float PI=(3,14);
+
+    printf("Taranacak alanin merkezi aci degerini giriniz = \n");
+    scanf("%d",&aci);
+
+    printf("Dairenin yaricap degerini giriniz =  \n");
+    scanf("%f",&ycap);
+
+    alan = (float)PI*ycap*ycap*(aci/360);
+
+    printf("alan = %.2f",alan);
+
+    return 0;
+}

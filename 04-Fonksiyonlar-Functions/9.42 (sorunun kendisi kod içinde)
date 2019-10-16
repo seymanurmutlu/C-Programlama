@@ -1,0 +1,42 @@
+//  Created by Seymanur Mutlu on 13.04.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+/* Kendisine gonderilen iki tarihin gun,ay,yil bilgilerine gore daha ileri tarihli olani
+ ekrana yazan buyuk tarih adindaki fonksiyonu yaziniz.
+
+ */
+#include <stdio.h>
+
+void buyukTarih(int gun1,int ay1,int yil1,int gun2,int ay2,int yil2){
+    
+    if(yil1>yil2) //yil buyukse direk yazdir.
+        printf("%d.%d.%d\n",gun1,ay1,yil1);
+    
+    else if (yil2>yil1) //yil buyukse direk yazdir.
+        printf("%d.%d.%d\n",gun2,ay2,yil2);
+    
+    else { //yillar esitse
+        if(ay1>ay2)
+            printf("%d.%d.%d\n",gun1,ay1,yil1);
+        else if (ay2>ay1)
+            printf("%d.%d.%d\n",gun2,ay2,yil2);
+        else { //yillar ve aylar esitse
+            if(gun1>gun2)
+                printf("%d.%d.%d\n",gun1,ay1,yil1);
+            else if(gun2>gun1)
+                printf("%d.%d.%d\n",gun2,ay2,yil2);
+            else
+                printf("tarihler ayni gunu gostermektedir cico.\n");
+        }
+        
+        
+    }
+}
+
+int main(int argc, const char * argv[]) {
+    buyukTarih(12,12,2004,22,12,2004);
+    printf("---------------\n");
+    buyukTarih(20,01,2005,22,12,2004);
+
+    return 0;
+}

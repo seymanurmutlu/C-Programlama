@@ -1,0 +1,47 @@
+//  strings sesli harfleri silen program
+//
+//  Created by Seymanur Mutlu on 17.04.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//Girilen cümledeki sesli harfleri silen program.
+
+#include <stdio.h>
+#include <string.h>
+
+int sesliHarfSil(char c){
+    
+    switch (c) {
+        case 'a':
+        case 'A':
+        case 'e':
+        case 'E':
+        case 'I':
+        case 'i':
+        case 'o':
+        case 'O':
+        case 'u':
+        case 'U':
+            return 1;
+        default:
+            return 0;
+    }
+    
+}
+
+int main(int argc, const char * argv[]) {
+    char str[100],sessiz[100];
+    int i,j=0;
+    printf("Dizgiyi girin: ");
+    fgets(str, 100, stdin);
+    
+    for (i=0; str[i] != '\0'; i++) {
+        if(sesliHarfSil(str[i])==0){
+            sessiz[j]=str[i];
+            j++;
+        }
+    }
+    
+    sessiz[j]='\0';
+    strcpy(str,sessiz);
+    printf("%s",str);
+    return 0;
+}

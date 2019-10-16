@@ -1,0 +1,39 @@
+//  Created by Seymanur Mutlu on 17.04.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+/*Klavyeden girilen en fazla 100 karakterlik anlamli bir kelimenin palindrome olup
+olmadigini bulan program yaziniz.(palindrome terstan ve duz okunusu aynı olan kelimedir.)
+ Ornek: Kulluk,ece */
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main(int argc, const char * argv[]) {
+    char dizgi[100]; //klavyeden alinacak dizgi
+    char tersDizgi[100]={'\0'}; //klavyeden alinan dizginin tersini atayacagiz.Atamadan once null yaptık.
+    int length=0; //dizgi uzunlugu
+    int i,karsilastirma;
+    
+    printf("Polindromlugu kontrol edilecek dizgiyi giriniz\n");
+    fgets(dizgi, 100, stdin);
+    
+    length=strlen(dizgi)-1; //sonlandirma karakterini cikarttim.
+    
+    for(i=length-1;i>=0;i--){
+        tersDizgi[length-i-1]=dizgi[i]; 
+    }
+   // printf("%s",tersDizgi); deneme icin.
+    
+    for(i=0;i<length;i++){
+        if(dizgi[i]==tersDizgi[i])
+            karsilastirma=1;
+        else
+            karsilastirma=0;
+    }
+    if(karsilastirma) //burada karsilastima dogruysa(1) if komutunu yapacaktir. karsilastirma==1 yazmaya gerek yoktur.
+        printf("palindrome.");
+    else
+        printf("palindrome degil.");
+    
+    return 0;
+}

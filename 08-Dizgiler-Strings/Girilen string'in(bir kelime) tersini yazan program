@@ -1,0 +1,30 @@
+//  Created by Seymanur Mutlu on 5.03.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+
+#include <stdio.h>
+
+int main(int argc, const char * argv[]) {
+    
+    char kelime[20];
+    
+    printf("bir kelime gir: ");
+    scanf("%s",kelime);//string alındı.
+    
+    printf("girilen kelime: %s",kelime);
+    
+    int i=0;
+    int harfs;
+    
+    for(harfs=0; kelime[harfs]!='\0';harfs++);//kelimenin harf sayisi bulundu.
+    
+    
+    printf("\n");
+    for(i=harfs;i>=0;i--){ //harf sayisina göre dizide geriye dogru saydirdi.
+        printf("%c",kelime[i]);
+    }
+    printf("\n");
+    
+    return 0;
+}
+//scanf'le alindigi icin bosluktan sonrasini okumaz o yüzden bir cumleyi bu ornekte tersten yazamayiz.

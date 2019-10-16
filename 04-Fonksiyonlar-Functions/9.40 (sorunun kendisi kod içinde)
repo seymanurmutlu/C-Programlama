@@ -1,0 +1,33 @@
+//  Created by Seymanur Mutlu on 10.04.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+/*kendisine gonderilen iki boyutlu düzlem üzerindeki eksenlere paralel dikdortgenin sol ust ve sag alt
+ kose koordinatlarina gore diktdortgenin icinde kalacak sekilde rasgele bir nokta koordinatı belirleyerek x ve y
+ degerlerini ekrana yazan noktaBul adindaki fonk ile yaziniz.
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+
+void noktaBul(int x1,int y1, int x2, int y2){
+    float xs,ys; //son degerler icin tanımladım.
+    //sayisal olarak sol ustteki noktanin x(-2) degeri sag alttakinden(2) daha kucuk olacagi icin aradaki uzaklik farkini x2-x1[(2-(-2))=4] olarak hesapliyoruz.
+    //sayisal olarak sol ustteki noktanin y(3) degeri sag alttakinden(-2) daha buyuk olacagi icin aradaki uzaklik farkini y1-y2 olarak hesapliyoruz.
+    //uzakilik farki icin ayri bir degisken tanimlanabilirdi fakat hafizada daha az yer kaplamasi adina tanimlamadim.
+    srand(time(NULL)); //her calistiginda farkli degerler atanmasi icin zaman kutuphanesini kullaniyoruz.
+    
+    xs=(float)(x1+rand()%(x2-x1+1)); //(float) yazmamizin sebebi xs bir float sayi iken esitligin karsindaki sayilar int'dır.İslem yapilirken sorun olmasin.
+    ys=(float)(y2+rand()%(y1-y2+1)); /*kucuk sayi ile buyuk sayi arasinda rastgele bir deger ata.kucuk sayiya aradaki farkın modunu alarak bir sayi
+                                      ekliyoruz boylelikle maksimum sayimiz buyuk sayi olur.*/
+    printf("Nokta=(%.2f,%.2f)",xs,ys);
+    
+}
+
+int main(int argc, const char * argv[]) {
+  //sol ust (-2,3) sag alt(2,-2)
+    noktaBul(-2, 3, 2, -2);
+    
+    return 0;
+}

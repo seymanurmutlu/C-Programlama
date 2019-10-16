@@ -1,0 +1,21 @@
+//  Created by Seymanur Mutlu on 11.03.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+
+#include <stdio.h>
+#include <ctype.h>
+int main(int argc, const char * argv[]) {
+    
+    char c1;
+    
+    printf("karakter gir: ");
+    scanf("%c",&c1);
+  
+  
+     if(ispunct(c1)) // Noktalama isareti mi? hazır fonksiyonu.
+        printf("%c karakteri bir noktalama isaretidir.\n",c1);
+     else
+        printf("%c karakteri bir noktalama isareti degildir.\n",c1);
+        
+return 0;
+}

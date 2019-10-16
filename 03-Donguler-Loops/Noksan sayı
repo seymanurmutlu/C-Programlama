@@ -1,0 +1,27 @@
+//  Created by Seymanur Mutlu on 8.03.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+
+#include <stdio.h>
+
+int main(int argc, const char * argv[]) {
+    /* noksan sayi olup olmadigini kontrol eden program.
+    Noksan sayi:kendisi haric bolenlerinin toplamı kendisinden
+    kucuk olan sayidir. */
+   
+    int sayi,i,toplam=0;
+    
+    printf("Sayi giriniz: ");
+    scanf("%d",&sayi);
+    
+    for(i=1;i<sayi;i++){
+        if(sayi%i==0)
+            toplam=toplam+i;
+            }
+    if(toplam<sayi)
+    printf("\n\nGirilen sayi noksandir.");
+    else
+        printf("\n\nGirilen sayi noksan degildir.");
+    
+    return 0;
+}

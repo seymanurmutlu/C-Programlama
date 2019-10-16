@@ -1,0 +1,32 @@
+//  Created by Seymanur Mutlu on 17.03.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+/*profesor Fazıl Demirci derste sayilarin gizemlerinden bashederken 8833 sayisinin
+ ilginc bir ozelliginden de bahsetti. Bu sayi kendisini oluşturan 88 ve 33 sayilarinin kareleri
+ toplamına eşitti (8833=88*88 + 33*33). Tam da bu sırada dersin kalan süresini belirlemek icin
+ kolunaki dijital saate baktı ve şaşırdı. Çünkü zamanın da tıpkı 8833 e benzediğini farketti.
+ Saat degerinin karesi ile dakika degerinin karesi toplamı, saat ve dakika yanyana yazıldığında
+ ortaya çıkan sayi ile aynı olmaktaydi. saat i bulup yazan C programı yaziniz.*/
+
+#include <stdio.h>
+
+int main(int argc, const char * argv[]) {
+    int i,j; //dongu icin
+    int saatk,dakikak; //saat ve dakikanın kareleri icin
+    int binler,yuzler,onlar,birler; //sayiyi basamaklarına ayırabilmek icin
+    for(i=1;i<25;i++){
+        saatk=i*i;
+        binler=i/10; //her defasında kontrol icin sayiyi basamaklara ayırıyor.
+        yuzler=i%10;
+        for (j=1; j<=59; j++) {
+            dakikak=j*j;
+            onlar=j/10; //kontrol için basamak analizi
+            birler=j%10;
+            
+            if(saatk+dakikak==((binler*1000)+(yuzler*100)+(onlar*10)+birler)) //uyuyorsa yazdır.
+                printf("i.j = %d.%d",i,j);
+        }
+    }
+  
+    return 0;
+}

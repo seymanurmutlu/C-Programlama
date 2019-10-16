@@ -1,0 +1,42 @@
+//  Created by Seymanur Mutlu on 4.03.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+
+#include <stdio.h>
+
+int main(){
+    int s1,s2;
+    
+    printf("Baslangic degerini girin: ");
+    scanf("%d",&s1);
+    
+    printf("Bitis degerini girin: ");
+    scanf("%d",&s2);
+    
+    if(s1>s2 || s1==s2){
+        while(s2>s1){
+        printf("HATA!\nBitis degeri baslangic degerinden kucuk olamaz.");
+    
+        printf("Bitis degeri girin: ");
+            scanf("%d",&s2);}
+    }
+    else printf("----------------\n");
+    
+    int i,j=0,top=0;
+    
+    for(i=s1;i<=s2;i++){
+        if(i%3==0 || i%11==0){
+            printf("%d ",i);
+            j++;
+            top=top+i;
+        }
+    }
+    
+    printf("Kurala uyan toplamda %d adet sayi bulunmaktadir.\n",j);
+    printf("Toplamlari = %d\n",top);
+    
+    return 0;
+    }
+/*klavyeden girilen bas. ve bit. degerlerine gore aralikta kalan sayilarin 3'e ya da 11'e
+ tam olarak bölünen sayilari,kac tane olduklarini ve toplamini ekrana yazan program yaziniz.Baslangic
+ degeri bitis degerinden kucuk olamaz.*/

@@ -1,0 +1,28 @@
+//  Created by Seymanur Mutlu on 14.03.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+int main(int argc, const char * argv[]) {
+    char cumle[80],kelime[10], *araPtr;
+    int sayac=0;
+    
+    printf("Bir cumle giriniz: ");
+    fgets(cumle,100, stdin);
+    printf("Aranacak kelimeyi giriniz: ");
+    scanf("%s",kelime);
+    
+    araPtr=strstr(cumle, kelime);
+    
+    while (araPtr != NULL) {
+        sayac++;
+        araPtr++;
+        araPtr=strstr(araPtr, kelime);
+    }
+    printf("|%s| kelimesi cumle icinde %d kere gecer \n",kelime,sayac);
+    
+    return 0;
+}

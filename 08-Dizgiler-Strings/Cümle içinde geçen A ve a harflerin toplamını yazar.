@@ -1,0 +1,22 @@
+//  Created by Seymanur Mutlu on 14.03.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+
+#include <stdio.h>
+
+int main(int argc, const char * argv[]) {
+    char cumle[100];
+    int i,sayac=0;
+    
+    printf("Cumleyi girin: ");
+    fgets(cumle, 100, stdin);
+    
+    for (i=0; cumle[i] != '\0'; i++) {
+        if (cumle[i]=='A' || cumle[i]=='a')
+            sayac++;
+    }
+    
+    printf("cumle icinde %d tane A veya a geçmektedir.",sayac);
+    
+    return 0;
+}

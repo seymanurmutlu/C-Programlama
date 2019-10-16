@@ -1,0 +1,58 @@
+//  Created by Seymanur Mutlu on 28.04.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+/*Kendisine gonderilen herhangi pozitif tamsayinin narsist olup olmadigini geri donduren isNarsistNumber adindaki
+ fonksiyonu, verilen ana (main) fonksiyona uygun olarak yaziniz.Gonderilen sayi narsist ise geri donus degeri 1,
+ degilse 0 olmaldir.
+ Narsist sayi: n basamakli bir sayiyi olusturan rakamların n.derecen kuvvetleri toplami sayinin yine kendisine
+ esitse bu sayiya narsist sayi denir.Ornek narsist sayilar = 153,1634,54748*/
+#include <stdio.h>
+#include <math.h>
+int isNarsistNumber(int sayi){
+    int basamak=0;
+    int toplam=0;
+    int gecici=sayi;
+    //ayni anda basamak sayisi hesaplayip sayilarin kuvvetlerini alamayacagim icin
+    //iki dongu kullaniyorum.
+    int dene=sayi; //en son kontrol icin.
+    
+    
+    while (sayi > 0){
+        // Sayı sıfırdan büyük olduğu sürece tekrarlanacak
+        
+      //  printf("%d \n",sayi%10); kontrol amacli yazdim.
+        // Sayıyının 10 ile modu alınır (yani sayıyı 10'a böldüğümüzde kalan sayı döner) ve ekrana yazdırılır.
+        
+        sayi = sayi/10;
+        // Sayı değişkeni 10'a bölünür ve sonuc sayi değişkenine atanır.
+        
+        basamak++;
+    }
+    
+    while (gecici > 0){
+        // Sayı sıfırdan büyük olduğu sürece tekrarlanacak
+        toplam=toplam+pow(gecici%10,basamak);
+        gecici = gecici/10;
+    }
+
+    if(dene==toplam)
+        return 1;
+    else
+        return 0;
+}
+
+int main(int argc, const char * argv[]) {
+    int sayi;
+    int sonuc;
+    printf("Sayinin narsistligini kontrol icin bir sayi girin \n");
+    scanf("%d",&sayi);
+    sonuc=isNarsistNumber(sayi);
+    
+    if(sonuc) //sonuc dogru ise(1) direk bu komutu yapar.
+        printf("%d narsist sayidir.\n",sayi);
+    else
+        printf("%d narsist sayi degildir.\n",sayi);
+   
+    
+    return 0;
+}

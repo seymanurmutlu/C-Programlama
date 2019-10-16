@@ -1,0 +1,27 @@
+//  main.c
+//  13.3
+//
+//  Created by Seymanur Mutlu on 17.04.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+/*Klavyeden girilen 4 adet tamsayi icerikli dizginin sayisal toplamini bulan programi yaziniz. */
+
+#include <stdio.h>
+#include <stdlib.h> //atoi kullanacagim icin stdlib kutuphanesini cagirdim.
+
+int main(int argc, const char * argv[]) {
+    int i;
+    int x; //string ifadeyi int cevirdigimde x'in icine atayacagim.
+    int toplam=0; //toplam icin tanimladigim degisken.
+    char sayilar[4][10];
+    printf("4 adet tamsayi icerikli dizgiyi giriniz: ");
+    
+    for (i=0; i<4; i++) { //4 defa
+        fgets(sayilar[i], 10, stdin); //klavyeden stringi oku.
+        x=atoi(sayilar[i]); //int cevir x'in icine koy.
+        toplam=toplam+x; //sayi kadar toplami arttir.
+    }
+    printf("\nGirdiginiz sayilarin toplami = %d'dir.\n",toplam);
+    
+    return 0;
+}

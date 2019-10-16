@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int saat,dakika,saniye,saniye1;
+
+    printf("Zamani giriniz(saat, dakika, saniye)= ");
+    scanf("%d %d %d",&saat,&dakika,&saniye);
+
+    printf("\nEklenecek süreyi giriniz(saniye)=");
+    scanf("%d",&saniye1);
+
+    int ekleneceksa=saniye1/3600,eklenecekdk=(saniye1/60)%60,eklenceksan=saniye1%60;
+
+    printf("eklenecek saat =%d \n eklenecek dakika=%d \n eklenecek saniye=%d",ekleneceksa,eklenecekdk,eklenceksan);
+
+    int yenisa=saat+ekleneceksa, yenidk=dakika+eklenecekdk, yenisan=saniye+eklenceksan;
+    int ekdk=yenisan/60;
+    printf("\n Yeni zaman= %d %d %d",yenisa+(yenidk+ekdk)%60+(yenidk+ekdk)/60,(yenidk+ekdk)%60,yenisan%60);
+
+    return 0;
+}
