@@ -1,0 +1,52 @@
+//  Created by Seymanur Mutlu on 14.05.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+
+#include <stdio.h>
+#include <stdlib.h>
+void yaz(int dizi[],int n){
+    int i;
+    for(i=0;i<n;i++){
+        printf("%d", dizi[i] );
+        printf("\n");
+    }
+    printf("\n\n");
+    
+}
+
+int main(int argc, const char * argv[]) {
+    int i;
+    int n=5;
+    int *dizi = (int*) malloc(n*sizeof(int)); //hafızada n kadar yer ayırdık.
+    
+    dizi[0]=1;
+    dizi[1]=3;
+    dizi[2]=5;
+    dizi[3]=7;
+    dizi[4]=9;
+    
+    yaz(dizi, n); //normal diziyi yazdirdik.
+    
+    //simdi sona ekleme işlemine başlıyoruz.
+    int yeni=444; //eklemek istedigimiz karakter.
+    
+    n++; //eleman sayisini 1 arttirdik.
+    
+    dizi = (int*)realloc(dizi, n); //yeni eleman sayisina gore hafizada ayrilan yeri degistirdik.
+    
+    dizi[n-1]=yeni;
+    printf("eleman ekledikten sonra \n");
+    yaz(dizi, n);
+    
+    //şimdi silme işlemine başlayalım.
+    printf("eleman azalttiktan sonra \n");
+    n--; //eleman sayisini 1 azalttik.
+    
+    dizi = (int*)realloc(dizi, n); //eleman sayisini azaltinca sondaki eleman silindi.
+    
+    yaz(dizi, n);
+    
+    
+
+    return 0;
+}

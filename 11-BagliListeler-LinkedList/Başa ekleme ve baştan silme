@@ -1,0 +1,60 @@
+//  Created by Seymanur Mutlu on 16.05.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+#include <stdlib.h>
+#include <stdio.h>
+
+void yaz (int dizi[],int n){ //diziyi yazdirmak icin olusturdugumuz fonksiyon
+    int i;
+    
+    for(i=0;i<n;i++){
+        printf("%d\n",dizi[i]);
+    }
+    printf("\n");
+}
+
+int main(int argc, const char * argv[]) {
+    int n=5; //n = eleman sayisi
+    int i;
+    int *dizi= (int*)malloc(n*sizeof(int)); //hafizada eleman sayisi kadar yer ayiriyoruz.
+    
+    dizi[0]=1;
+    dizi[1]=3;
+    dizi[2]=5;
+    dizi[3]=7;
+    dizi[4]=9;
+    
+    yaz(dizi, n);
+    
+    //başa ekleme islemine başlıyoruz.
+    n++; //eleman sayisini 1 arttirdik.
+    
+    dizi = (int*)realloc(dizi,n); //yeni eleman sayisina gore hafiza aldik.
+    
+    int yeni = 444; //başa eklenecek elemani tanimladik
+    
+    for(i=n-1;i>0;i--){
+        dizi[i]=dizi[i-1]; //her eleman bir sira ileri kayiyor. dizi[1]=dizi[2] isleminden sonra
+    }
+    
+    dizi[0]=yeni; //dizi[0]'a gecince yeni elemana esitliyoruz.
+    
+    printf("Basa ekleme isleminden sonra\n");
+    yaz(dizi, n);
+    
+    //şimdi baştan silme işlemine başlayalım
+    
+    for(i=0;i<n-1;i++){
+        dizi[i]=dizi[i+1]; //tum elemanlari geri kaydiriyoruz.
+        
+    }
+    
+    n--;
+    
+    dizi = (int*)realloc(dizi, n); //tekrardan eleman sayisina gore hafiza aldik.
+    
+    printf("Bastan silme isleminden sonra\n");
+    yaz(dizi, n);
+    
+    return 0;
+}
