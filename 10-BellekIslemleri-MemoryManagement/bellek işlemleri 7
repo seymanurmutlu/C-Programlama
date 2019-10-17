@@ -1,0 +1,35 @@
+//  Created by Seymanur Mutlu on 8.05.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+    int main(int argc, const char * argv[]) {
+    
+    int i,N,*diziPtr;
+    
+    printf("Kac sayi gireceksiniz ?  ");
+    scanf("%d",&N); //bir sayi aliyoruz.
+     
+    diziPtr=(int*)malloc(N*sizeof(int)); //boylelikle program calisirken ne kadar yere ihtiyscımız varsa o kadar yer ayırıyoruz.
+    
+    if(diziPtr == NULL){ //yer alamadiysa null doner. Null ise hatayi ekrana basip exit ile tamamen programi sonlandiriyoruz.
+        printf("HATA! Bellekten yer ayrilamadi. \n");
+        exit(1); //programi sonlandir.
+    }
+    
+    for(i=0;i<N;i++){
+        printf("%d . Elemani girin : ",i+1);
+        scanf("%d",&diziPtr[i]);
+        printf("\n");
+    }
+    
+    for(i=0;i<N;i++){
+        printf("%d.Eleman : %d",i+1,diziPtr[i]);
+        printf("\n");
+    }
+    free(diziPtr);//işlemlerimiz bittikten sonra ayirdigimiz yeri bırakıyoruz.
+    return 0;
+}

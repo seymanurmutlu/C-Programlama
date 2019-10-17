@@ -1,0 +1,22 @@
+//  Created by Seymanur Mutlu on 8.05.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, const char * argv[]) {
+    int *A; //bir pointer aldik.
+    
+    A=(int*)malloc(sizeof(int)); //işaretçilerde tür dönüşümü yaptık.
+    
+    printf("A'nın gösterdiği adres : %p \n",A);
+    
+    *A=123;
+    
+    printf("A'nın gösterdiği değer : %d \n",*A);
+    
+    free(A); //işlemler yaptiktan sonra hafiza blogunu serbest bıraktık.
+    
+    return 0;
+}

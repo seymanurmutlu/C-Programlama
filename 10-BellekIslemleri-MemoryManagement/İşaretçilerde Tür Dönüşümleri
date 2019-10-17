@@ -1,0 +1,31 @@
+//  Created by Seymanur Mutlu on 7.05.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+
+#include <stdio.h>
+
+
+int main(int argc, const char * argv[]) {
+    int dizi[10]={0,1,2,3,4,5,6,7,8,9}; //10 elemanli int dizi 40 byte yer kaplar
+    int i;
+    
+    printf("dizi : ");
+    for(i=0;i<10;i++)
+        printf("%d ",dizi[i]);
+    
+    printf("\n\n");
+    
+    char *s = (char*)(dizi);
+    strcpy(s,"testaaabbb"); //yazdigimiz testaaabbb(char = 1byte) 10 harfli oldugu icin 10byte yer kaplar
+    printf("s : %s\n\n",s);
+    
+    /*burada 10 byte demek dizinin ilk iki elemanına ve 3.elemanın bir kısmına denk gelir. O yüzden diziyi ikinci
+     defa yazdırırken başka sayılar verir. */
+    
+    printf("dizi : ");
+    for (i=0; i<10; i++)
+        printf("%d ",dizi[i]);
+    
+    printf("\n\n");
+    return 0;
+}

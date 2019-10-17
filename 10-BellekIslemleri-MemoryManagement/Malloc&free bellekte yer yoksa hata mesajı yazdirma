@@ -1,0 +1,29 @@
+//  Created by Seymanur Mutlu on 8.05.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, const char * argv[]) {
+    int *A;
+    
+    A=(int*)malloc(10*sizeof(int));
+    
+    if(A==NULL){
+        printf("HATA! Bellek ayrılamadı.\n\n");
+        exit(1); //programı sonlandırdık. Anlasılmaz bir hata mesajı ile karsılasmadik.
+    }
+    
+    A[0]=111;
+    A[4]=222;
+    A[9]=999;
+    
+    printf("A[0] : %d\n",A[0]);
+    printf("A[4] : %d\n",*(A+4));
+    printf("A[9] : %d\n",A[9]);
+    
+    free(A);
+    
+    return 0;
+}

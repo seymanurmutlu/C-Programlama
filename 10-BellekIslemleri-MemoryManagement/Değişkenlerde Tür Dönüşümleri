@@ -1,0 +1,16 @@
+//  Created by Seymanur Mutlu on 7.05.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+
+#include <stdio.h>
+
+int main(int argc, const char * argv[]) {
+    float x=3.5;
+    
+    int y=(int)x; //değişkenlerde tür dönüşümleri 
+    
+    printf("x = %f\n",x);
+    printf("y = %d\n",y);
+    
+    return 0;
+}

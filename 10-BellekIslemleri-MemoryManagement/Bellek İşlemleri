@@ -1,0 +1,28 @@
+//  Created by Seymanur Mutlu on 7.05.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+
+#include <stdio.h>
+
+int main(int argc, const char * argv[]) {
+    int x,y;
+    int *p;
+    
+    printf("%d\n",x);
+    printf("%d\n",y);
+    
+    x=0x0DEAD; //x burada degisken oldugu icin bu yazdıgımız x'in icine yazilmistir. Adresi etkilemez.
+    y=0x0BEEF; //y de ayni sekilde. Dikkat etmemiz gereken nokta adreslerde degişiklik yok.
+    
+    printf("%d\n",x);
+    printf("%d\n",y);
+    
+    p=&x;     //p pointer oldugu icin x'in adresini p'ye atiyoruz.
+    *p=100; // *p yaptigimizda p'nin içini kastettigimiz icin yine x'in adresini degistirmedik. Icini degistirdik.
+    p=&y;     //p pointer oldugu icin y'in adresini p'ye atiyoruz.
+    *p=200; // *p yaptigimizda p'nin içini kastettigimiz icin yine y'nin adresini degistirmedik. Icini degistirdik.
+    
+    printf("%d\n",x);
+    printf("%d",y);
+    return 0;
+}
