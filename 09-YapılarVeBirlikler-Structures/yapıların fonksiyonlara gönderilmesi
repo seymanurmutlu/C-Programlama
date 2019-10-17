@@ -1,0 +1,38 @@
+//  Created by Seymanur Mutlu on 22.04.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+/*Yapıların fonksiyonlara gonderilmesi*/
+#include <stdio.h>
+struct nokta{
+    int x;
+    int y;
+};
+void yazdir(struct nokta);
+void degistir(struct nokta *ptr);
+
+int main(int argc, const char * argv[]) {
+    
+    struct nokta c={3,4}; //yapiyi olusturdum
+    struct nokta *cptr; //yapinin adresini gosterecek pointer ı olusturdum.
+    
+    cptr=&c; //yapinin adresini pointer icine attim.
+    
+    yazdir(c);
+    degistir(&c); //adres ile cagirip adresin icindekileri degistirdikten sonra
+    yazdir(c);  //tekrar yazdirdim .
+    
+    return 0;
+}
+
+void yazdir(struct nokta b){ //Call by value (degerle cagir) yontemi kullanilmistir.
+    
+    printf("c.x = %d\n",b.x);
+    printf("c.y = %d\n",b.y);
+    printf("\n");
+}
+void degistir(struct nokta *ptr){ //Call by reference (baglantili cagir) yontemi kullanilmistir.
+    
+    ptr->x=16;
+    ptr->y=10;
+    
+}

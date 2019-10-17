@@ -1,0 +1,46 @@
+//baskasinin cozumu
+
+#include <stdio.h>
+#include <stdlib.h>
+struct BParca {
+    char ad[20];
+    int adet;
+    float birim_fiyat;
+};
+
+
+int main()
+{
+    struct BParca parcalar[10];
+    
+    int i,j,kontrol;
+    float toplam=0;
+    
+    for (i=0;i<10;i++)
+    {
+        printf("Parca adini giriniz:");
+        scanf("%s",&parcalar[i].ad);
+        printf("Parca adedini giriniz:");
+        scanf("%d",&parcalar[i].adet);
+        printf("Parca adini giriniz:");
+        scanf("%f",&parcalar[i].birim_fiyat);
+        toplam=toplam + parcalar[i].adet * parcalar[i].birim_fiyat;
+        printf("Yeni urun girmek icin 1 bitirmek icin 2 yazýnýz:");
+        scanf("%d",&kontrol);
+        if(kontrol==2) break;
+        
+    }
+    
+    
+    printf("Urun Adý     Adet       Birim Fiyat\n");
+    printf("------------------------------------\n");
+    for (j=0;j<=i;j++)
+    {
+        printf ("%s      %d       %f\n",parcalar[j].ad,parcalar[j].adet,parcalar[j].birim_fiyat);
+        
+    }
+    printf("------------------------------------\n");
+    printf("Toplam Fiyat        %f TL",toplam);
+    
+    return 0;
+}

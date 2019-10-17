@@ -1,0 +1,33 @@
+//  ogrencilere ait bilgiler struct dizi seklinde alma
+//
+//  Created by Seymanur Mutlu on 24.04.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+
+#include <stdio.h>
+#include <stdlib.h>
+struct ogrenci{
+    char ad[15];
+    char soyad[15];
+    int no;
+    int kayitYili;
+    char tcKNo[12];
+};
+
+int main(int argc, const char * argv[]) {
+    struct ogrenci liste[100];
+    
+    strcpy(liste[0].ad,"seyma nur"); //liste[0].ad'in icerisine "seyma nur" kelimesini kopyala.
+    strcpy(liste[0].soyad,"mutlu"); //liste[0].soyad'in icerisine "mutlu" kelimesini kopyala.
+    
+    liste[0].no=170; //liste[0].no'ya 170 ata.
+    
+    liste[0].kayitYili=2017; //liste[0].kayitYili'na 2017'i ata.
+    
+    strcpy(liste[0].tcKNo,"12345678998"); //char tipinde kayitli oldugundan dolayi strcpy kullandik.
+    
+    
+    printf("%s %s %d %d %s\n",liste[0].ad,liste[0].soyad,liste[0].no,liste[0].kayitYili,liste[0].tcKNo); //ilk ogrencinin adini,kayit yilini,numarasini yaz.
+    
+    return 0;
+}

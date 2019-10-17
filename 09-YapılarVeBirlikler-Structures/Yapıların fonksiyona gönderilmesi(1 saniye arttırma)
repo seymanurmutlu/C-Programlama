@@ -1,0 +1,35 @@
+//  Created by Seymanur Mutlu on 22.04.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+/*Tamsayi saat,dakika,saniye uyelerini barindiran struct zaman turundeki bir degiskenin degerini
+ bir saniye arttiran birSnArttir adindaki fonksiyonu yaziniz. Kendisine gonderilen zaman degeri 21.58.32
+ oldugunda donusecegi deger 21.58.33 olmalidir.*/
+#include <stdio.h>
+struct zaman{
+    int saat;
+    int dakika;
+    int saniye;
+};
+void birSnArttir(struct zaman *ptr);
+
+int main(int argc, const char * argv[]) {
+    
+    struct zaman a = {23,59,59}; //buraya istenilen zaman girilebir.
+
+    birSnArttir(&a);
+    printf("Bir saniye arttirilmis hali \n%02d.%02d.%02d",a.saat,a.dakika,a.saniye);
+    
+  
+    return 0;
+}
+void birSnArttir(struct zaman *ptr){
+    ptr->saniye=ptr -> saniye +1; //saniyeyi 1 arttiriyorum
+    if(ptr->saniye==60){ //eger 60 saniye olursa saniyeyi 0 a esitleyip dakikayi bir arttiriyorum.
+        ptr->saniye=0;
+        ptr->dakika=ptr->dakika +1;
+        if(ptr->dakika==60){ //eger dakika 60 olursa dakikayi sifira esitleyip saati 1 arttiyorum.
+            ptr->dakika=0;
+            ptr->saat=(ptr->saat+1)%24; //saatin 24'e modunu aliyorum.
+        }
+    }
+}

@@ -1,0 +1,40 @@
+//  Created by Seymanur Mutlu on 25.04.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+#include <stdio.h>
+#include <math.h>
+struct zaman{
+    int saat;
+    int dakika;
+    int saniye;
+};
+
+void zamanTopla(struct zaman *ptr1,struct zaman *ptr2);
+
+int main(int argc, const char * argv[]) {
+    struct zaman a1={23,30,20};
+    struct zaman a2={1,0,40};
+    
+    zamanTopla(&a1,&a2);
+    printf("%d %d %d",a1.saat,a1.dakika,a1.saniye);
+    
+    return 0;
+}
+void zamanTopla(struct zaman *ptr1,struct zaman *ptr2){
+    if(ptr1->saniye+ptr2->saniye>=60){ //saniyelerin toplamlari 60tan buyuk veya esitse
+        ptr1->dakika=ptr1->dakika+floor((ptr1->saniye+ptr2->saniye)/60);
+        ptr1->saniye=(ptr1->saniye+ptr2->saniye)%60;
+        
+        
+        if(ptr1->dakika+ptr2->dakika>=60){ //dakikalarin toplamlari 60tan buyuk veya esitse
+            ptr1->saat=ptr1->saat+floor((ptr1->dakika+ptr2->dakika)/60);
+            ptr1->dakika=(ptr1->dakika%ptr2->dakika)%60;
+        }
+        
+        else //dakikalarin toplami 60tan kucukse
+            ptr1->dakika=ptr1->dakika+ptr2->dakika;
+            ptr1->saat=(ptr1->saat+ptr2->saat)%24;
+        
+    }
+    
+}

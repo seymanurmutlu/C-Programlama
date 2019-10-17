@@ -1,0 +1,61 @@
+//  Created by Seymanur Mutlu on 25.04.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+/*Icınde ogrencinin numara(dizgi),ortalama(ondalik),kredi toplami(tamsayi) ve giris yili(tamsayi) bilgilerini tutan
+ ogrenci adindaki yapiyi(struct) tanimlayiniz.Kendisine gonderilen ogrenci turundeki iki degiskeni karsilastirarak daha basarili olan
+ ogrenciyi geri donduren basariliBul adindaki fonksiyonu,degerlerin klavyeden girildigi sonucun ekrana yazdirildigi bir main fonksiyonu
+ ile beraber yaziniz.Ortalamasi buyuk olan daha basarilidir.Ortalamalar ayni ise kredi toplami kucuk olan daha iyidir.Kredi toplamlari da
+ ayni ise giris yili buyuk olan daha iyidir.Tum bu degerler ayni ise herhangi biri basarili kabul edilir.*/
+
+
+#include <stdio.h>
+struct ogrenci{
+    char no[10];
+    float ort;
+    int kredi;
+    int girisYili;
+};
+
+struct ogrenci basariliOlaniBul(struct ogrenci *o1,struct ogrenci *o2){
+    struct ogrenci *basarili;
+    
+    if(o1->ort > o2->ort)
+        basarili=o1;
+    
+    else if (o1->ort < o2 -> ort)
+        basarili=o2;
+    
+        else{
+            if(o1->kredi > o2->kredi)
+                basarili=o1;
+            else if(o1->kredi < o2->kredi)
+                basarili=o2;
+            
+            else{
+                if(o1->girisYili > o2->girisYili)
+                    basarili=o1;
+                
+                else
+                    basarili=o2;
+            }
+        }
+        return *basarili;
+}
+
+int main(int argc, const char * argv[]) {
+    struct ogrenci ogr1;
+    struct ogrenci ogr2;
+    struct ogrenci basarili;
+    
+    printf("basarili ogrenciyi bulmak icin iki kisinin bilgilerini girin\n");
+    printf("1.kisinin numarasi,ortalamasi,kredisi,giris yili: ");
+    scanf("%s %f %d %d",&ogr1.no,&ogr1.ort,&ogr1.kredi,&ogr1.girisYili);
+    
+    printf("\n2.kisinin numarasi,ortalamasi,kredisi,giris yili: ");
+    scanf("%s %f %d %d",&ogr2.no,&ogr2.ort,&ogr2.kredi,&ogr2.girisYili);
+    
+    basarili=basariliOlaniBul(&ogr1, &ogr2);
+    
+    printf("\nbasarili olan ogrenci\n%s %.2f %d %d\n",basarili.no,basarili.ort,basarili.kredi,basarili.girisYili);
+    return 0;
+}

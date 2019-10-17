@@ -1,0 +1,36 @@
+//  Created by Seymanur Mutlu on 24.04.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+
+#include <stdio.h>
+struct kutu{
+    int uzunluk;
+    int yukseklik;
+    int genislik;
+};
+
+int main(int argc, const char * argv[]) {
+    struct kutu liste[10];
+    int devam=1;
+    int i,j;
+    int hacim[10]={0};
+    
+    for (i=0; devam==1; i++) {
+        printf("%d.kutunun uzunlugu: ",i+1);
+        scanf("%d",&liste[i].uzunluk);
+        printf("%d.kutunun yuksekligi: ",i+1);
+        scanf("%d",&liste[i].yukseklik);
+        printf("%d.kutunun genisligi: ",i+1);
+        scanf("%d",&liste[i].genislik);
+        hacim[i]=liste[i].uzunluk*liste[i].yukseklik*liste[i].genislik;
+        printf("devam etmek icin 1 : ");
+        scanf("%d",&devam);
+    }
+    
+    for (j=0 ; j<i ; j++) {
+        printf("%d.kutu %d %d %d\n",i+1,liste[j].uzunluk,liste[j].yukseklik,liste[j].genislik);
+        printf("hacim: %d\n",hacim[j]);
+    }
+    
+    return 0;
+}

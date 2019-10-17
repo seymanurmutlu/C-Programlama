@@ -1,0 +1,55 @@
+//  Created by Seymanur Mutlu on 25.04.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+/*Kendisine gonderilen iki adet, uyeleri asagidaki gibi olan ve adi tarih olan yapi
+ turundeki degiskenlerden daha ileride olanı geriye donduren buyukOlanibul adındaki
+ fonksiyonu,degiskenlerin degerlerinin klavyeden girildigi fonksiyonun cagırıldıgı ve
+ fonksiyonudan geri donen degerin ekrana yazıldıgı bir ana fonk ile birlikte yaziniz.
+ üye adi                      tür
+ -------                      ---
+ yil                          tamsayi
+ ay                           tamsayi
+ gun                          tamsayi
+ */
+
+struct tarih{
+    int gun;
+    int ay;
+    int yil;
+};
+struct tarih buyukOlanibul(struct tarih *p1,struct tarih*p2 ){
+    struct tarih *buyuk;
+    if(p1->yil > p2->yil)
+        buyuk=p1;
+   
+    else if (p2->yil > p1->yil)
+        buyuk=p2;
+   
+        else{
+            if(p1->ay > p2->ay)
+                buyuk=p1;
+            else if (p1->ay < p2->ay)
+                buyuk=p2;
+            
+            else{
+                if(p1->gun > p2->gun)
+                    buyuk=p1;
+                else if (p1->gun < p2->gun)
+                    buyuk =p2;
+                else buyuk=p1;
+            }
+        }
+    return *buyuk;
+}
+#include <stdio.h>
+
+int main(int argc, const char * argv[]) {
+    struct tarih t1={25,6,2015};
+    struct tarih t2={25,5,2015};
+    
+    struct tarih buyuk=buyukOlanibul(&t1, &t2);
+    
+    printf("buyuk olan tarih %d %d %d\n",buyuk.gun,buyuk.ay,buyuk.yil);
+    
+    return 0;
+}

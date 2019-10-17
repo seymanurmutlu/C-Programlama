@@ -1,0 +1,42 @@
+//  Created by Seymanur Mutlu on 22.04.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+/* Uyeleri yil(tamsayi,ay(tamsayi),gun(tamsayi) olan tarih adindaki yapiyi(struct) tanimlayiniz.
+ Tanimladiginiz yapi turunde ana(main) fonk.na klavyeden girilen iki adet farkli tarihten daha
+ ileride olani bulup ekrana yazdiran programi yaziniz.
+ Tarihleri 23 04 1923 seklinde arada bosluklarla girceksiniz.*/
+
+#include <stdio.h>
+
+struct tarih{
+    int gun; //tamsayi olarak gun,ay,yil struct icindde tanimlandi.
+    int ay;
+    int yil;
+};
+
+int main(int argc, const char * argv[]) {
+    
+    struct tarih t1;
+    struct tarih t2;
+    struct tarih buyuk;
+    
+    printf("birinci tarihi giriniz\n");
+    scanf("%d%d%d",&t1.gun,&t1.ay,&t1.yil); //yapiya uygun olarak hafizaya aliyorum.
+    
+    printf("ikinci tarihi giriniz\n");
+    scanf("%d%d%d",&t2.gun,&t2.ay,&t2.yil);
+    
+    buyuk=t2; //ilk basta t2'yi buyuk tarih olarak kabul ediyorum.Yapiya uygun olarak esitleme yaptim.
+    
+    if(t1.yil>t2.yil) //t1'in yili daha buyukse buyuk tarih t1 olmus olur.
+        buyuk=t1;
+    
+    else if ((t1.yil==t2.yil) && (t1.ay>t2.ay))
+        buyuk=t1;
+    
+    else if ((t1.yil==t2.yil) && (t1.ay==t2.ay) && (t1.gun>t2.gun))
+        buyuk=t1;
+    
+    printf("Ileride olan tarih = %d.%d.%d\n",buyuk.gun,buyuk.ay,buyuk.yil);
+    return 0;
+}

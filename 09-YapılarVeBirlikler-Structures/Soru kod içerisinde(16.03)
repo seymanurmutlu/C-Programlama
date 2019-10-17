@@ -1,0 +1,36 @@
+//  Created by Seymanur Mutlu on 25.04.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+/*Tamsayi saat,dakika,saniye uyelerini barindiran struct zaman turundeki biri degiskeni ve uzerine eklenmesi
+ gerekn saniye miktarini parametre olarak alip struct zaman turundeki yeni zamani geri donduren fonk. yaziniz.*/
+#include <stdio.h>
+#include <math.h>
+struct zaman{
+    int saat;
+    int dakika;
+    int saniye;
+};
+
+int main(int argc, const char * argv[]) {
+    struct zaman z1={21,58,32}; //ilk deger atamasi yaptim.
+    int eksaniye;
+    int ekdakika;
+    int eksaat;
+    
+    printf("eklencek saniyeyi girin: ");
+    scanf("%d",&eksaniye); //eklemek istedigim saniyeyi aldim.
+    
+    if(z1.saniye+eksaniye>=60){
+        ekdakika=floor((eksaniye+z1.dakika)/60);
+        z1.saniye=(z1.saniye+eksaniye)%60;
+        z1.dakika=z1.dakika+ekdakika;
+        if(z1.dakika>=60){
+            eksaat=floor((z1.dakika+ekdakika)/60);
+            z1.dakika=z1.dakika%60;
+            z1.saat=(z1.saat+eksaat)%24;
+        }
+    }
+    printf("yeni saat: %d %d %d",z1.saat,z1.dakika,z1.saniye);
+    
+    return 0;
+}

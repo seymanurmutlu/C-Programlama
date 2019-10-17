@@ -1,0 +1,34 @@
+//  Created by Seymanur Mutlu on 22.04.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+
+#include <stdio.h>
+struct nokta { /*burada sadece yapiyi tanimladik.Yapi tanimlanmasi sirasinda bellekte herhangi bir yer
+                ayrilmasi soz konusu degildir.Tanimlanan yapi sadece bir veri türüdür.*/
+    
+    int x; //yapinin icinde bir x degiskeni tanimladik.
+    int y; //yapinin icinde bir y degiskeni tanimladik.
+
+}; //parantezin sonundaki ';' kesinlikle unutmamaliyiz.
+
+int main(int argc, const char * argv[]) {
+
+    struct nokta c; //yapıyı kullanarak bellekte c adi altinda yer ayirdik.
+    struct nokta *cptr; //yapiya erisim icin tanimladik.
+    
+    c.x=3; //c yapi degiskeninin x adli degiskenine 3 atadik.
+    c.y=5; //c yapi degiskeninin y adli degiskenine 5 atadik.
+    
+    cptr=&c; //cptr pointerina c'nin adresini gonderdik.
+    
+    printf("c.x = %d\n",c.x); //burada uyelere yapi uzerinden eristik.
+    printf("c.y = %d\n",c.y); //adres kullanmadik.
+    
+    printf("(*cptr).x = %d\n",(*cptr).x); //kullandigimiz parantezin yeri cok onemlidir.
+    printf("(*cptr).y = %d\n",(*cptr).y); //(*cptr).y yerine *cptr.y yazsaydik (.) operatoru daha once isleme girerdi.
+    
+    printf("cptr->x = %d\n",cptr->x); //cptr->x ile (*cptr).x aynidir.
+    printf("cptr->y = %d\n",cptr->y); //bu iki yapida da adresten uyelere eristik.
+    
+    return 0;
+}

@@ -1,0 +1,51 @@
+//  Created by Seymanur Mutlu on 25.04.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+
+#include <stdio.h>
+#include <stdlib.h>
+struct tarih{
+    int gun;
+    int ay;
+    int yil;
+};
+struct tarih tarihOlustur(int g,int a,int y){
+    struct tarih t1;
+    if(g>30 || a>12){
+        t1.gun=0;
+        t1.ay=0;
+        t1.yil=0;
+    }
+    else{
+        t1.gun=g;
+        t1.ay=a;
+        t1.yil=y;
+        
+    }
+    return t1;
+}
+
+struct ogrenci{
+    char ad[15];
+    char soyad[15];
+    char no[11];
+    char bolum[41];
+    struct tarih kayitTarih;
+};
+
+void atamaYap(struct ogrenci *ogr,const char ad[],const char soyad[],const char no[],const char bolum[],struct tarih kayit){
+    strcpy(ogr->ad, ad);
+    strcpy(ogr->soyad, soyad);
+    strcpy(ogr->no, no);
+    strcpy(ogr->bolum, bolum);
+    ogr->kayitTarih=kayit;
+
+}
+
+int main(int argc, const char * argv[]) {
+    struct ogrenci ogr1;
+    atamaYap(&ogr1, "seyma", "mutlu", "170201004", "Bilgisayar Muh", tarihOlustur(29, 7, 2016));
+    
+    printf("%s %s %s %s %d %d %d\n",ogr1.ad,ogr1.soyad,ogr1.no,ogr1.bolum,ogr1.kayitTarih.gun,ogr1.kayitTarih.ay,ogr1.kayitTarih.yil);
+    return 0;
+}

@@ -1,0 +1,26 @@
+//  Created by Seymanur Mutlu on 25.04.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+
+#include <stdio.h>
+struct tarih {
+    int gun;
+    int ay;
+    int yil;
+};
+struct ogrenci{
+    char ad[10];
+    char soyad[10];
+    int ogrno;
+    int kayitYili;
+    char tcNo[12];
+    struct tarih dogum;
+    struct tarih kayit;
+    
+};
+int main(int argc, const char * argv[]) {
+    printf("%d\n",sizeof(int));
+    printf("%d\n",sizeof(struct tarih));
+    printf("%d\n",sizeof(struct ogrenci));
+    return 0;
+}

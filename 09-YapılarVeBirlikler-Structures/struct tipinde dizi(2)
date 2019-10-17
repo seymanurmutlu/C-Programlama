@@ -1,0 +1,52 @@
+//  Created by Seymanur Mutlu on 25.04.2018.
+//  Copyright © 2018 Seymanur Mutlu. All rights reserved.
+//
+
+#include <stdio.h>
+struct tarih{
+    int gun;
+    int ay;
+    int yil;
+};
+struct tarih tarihOlustur(int g,int a,int y){
+    struct tarih t1;
+    if(g>30 || a>12){
+        t1.gun=0;
+        t1.ay=0;
+        t1.yil=0;
+    }
+    else{
+        t1.gun=g;
+        t1.ay=a;
+        t1.yil=y;
+    }
+    return t1;
+}
+struct ogrenci{
+    char ad[15];
+    char soyad[15];
+    char no[11];
+    char bolum[40];
+    struct tarih kayitTarihi;
+};
+void ogrenciAtamaYap(struct ogrenci *t,char ad[],char soyad[],char no[],char bolum[],struct tarih kayit){
+    strcpy(t->ad,ad);
+    strcpy(t->soyad, soyad);
+    strcpy(t->no, no);
+    strcpy(t->bolum,bolum);
+    t->kayitTarihi=kayit;
+}
+
+int main(int argc, const char * argv[]) {
+    struct ogrenci liste[10];
+    int i;
+    ogrenciAtamaYap(&liste[0], "Seymanur", "Mutlu", "170201004", "Bilgisayar Muhendisligi", tarihOlustur(1, 1, 2001));
+    ogrenciAtamaYap(&liste[1], "Utku", "Sayan", "170201026", "Bilgisayar Muhendisligi", tarihOlustur(1, 1, 2002));
+    ogrenciAtamaYap(&liste[2], "Yasemin", "Oguz", "170201025", "Bilgisayar Muhendisligi", tarihOlustur(1, 1, 2003));
+    int kayitliogrencis=3;
+    for(i=0;i<kayitliogrencis;i++){
+        printf("%s %s %s %s \n%d %d %d\n",liste[i].ad,liste[i].soyad,liste[i].no,liste[i].bolum,liste[i].kayitTarihi.gun,liste[i].kayitTarihi.ay,liste[i].kayitTarihi.yil);
+        
+    }
+    return 0;
+}
